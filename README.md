@@ -4,7 +4,7 @@ Medialib is a group of definitions and conventions for media, media addons and m
 
 **[This project uses the Addonlib project](https://github.com/addonlib-project)**
 
-By using Medialib in your media and media source libraries, you make them compatible with all other medias and medias of th same type using the same library, simplifying their use by other developers and the end users.
+By using Medialib in your media and media source libraries, you make them compatible with all other medias and medias of the same type using the same library, simplifying their use by other developers and the end users.
 
 Projects using Medialib:
 
