@@ -1,10 +1,10 @@
-interface definition {
+export interface optionDefinition {
   type: string;
-  value?: definition;
+  value?: optionDefinition;
 }
 
 export interface sourceOptionsDefinitionType {
-  [key: string]: definition;
+  [key: string]: optionDefinition;
 }
 
 export interface sourceOptionsType {

@@ -1,10 +1,10 @@
-interface definition {
+export interface settingDefinition {
   type: any;
-  value?: definition;
+  value?: settingDefinition;
 }
 
 export interface sourceSettingsDefinitionType {
-  [key: string]: definition;
+  [key: string]: settingDefinition;
 }
 
 export interface sourceSettingsType {
