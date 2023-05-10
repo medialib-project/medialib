@@ -1,11 +1,11 @@
 {
   "name": "@medialib/medialib",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "This project give the core resources and conventions of the medialib project, compatible with the addonlib project",
   "main": "dist/index.js",
   "prettier": "prettier-config-leopoldhub",
   "scripts": {
-    "clean": "rimraf dist/",
+    "clean": "rimraf docs/ dist/",
     "compile": "tsc",
     "lint": "prettier --write . && prettier --check . && eslint",
     "test": "npm run lint",
@@ -47,7 +47,7 @@
     "typescript": "^5.0.4"
   },
   "dependencies": {
-    "@addonlib/addonlib": "^0.0.1",
+    "@addonlib/addonlib": "^0.1.0",
     "events": "^3.3.0",
     "json-diff": "^1.0.3"
   }

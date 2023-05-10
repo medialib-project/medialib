@@ -1,61 +1,44 @@
 import { EventEmitter } from 'events';
 import { compareChanges } from '../utils/compareUtils';
 import {
-  sourceSettingsDefinitionType,
-  sourceSettingsType,
-} from './sourceSettingsType';
-import {
-  sourceOptionsDefinitionType,
-  sourceOptionsType,
-} from './sourceOptionsType';
-import { fetchResultType } from './fetchResultType';
+  mediaSourceFetchOption,
+  mediaSourceFetchResult,
+  mediaSourceSettings,
+} from './mediaSourceTypes';
+import { optionDefinition, optionUtils } from '@addonlib/addonlib';
 
-export default abstract class AbstractMediaSource extends EventEmitter {
-  protected static settingsDefinition: sourceSettingsDefinitionType = {};
-  protected static defaultSettings: sourceSettingsType = {};
+//TODO: details?
+export default abstract class AbstractMediaSource<
+  T extends mediaSourceSettings = mediaSourceSettings,
+  U extends mediaSourceFetchOption = mediaSourceFetchOption,
+  V extends mediaSourceFetchResult = mediaSourceFetchResult
+> extends EventEmitter {
+  private settingsDefinition!: optionDefinition<T>;
+  private settings: T;
 
-  private settings: sourceSettingsType;
-
-  public constructor(settings?: sourceSettingsType) {
+  public constructor(settingsDefinition?: optionDefinition<T>) {
     super();
-    this.settings = { ...this.getDefaultSettings(), ...(settings || {}) };
+    this.settingsDefinition = settingsDefinition as optionDefinition<T>;
+    this.settings = optionUtils.optionDefinitionToOption(
+      this.settingsDefinition
+    );
   }
 
-  public static getSettingsDefinition() {
+  public getSettingsDefinition(): optionDefinition<T> {
     return this.settingsDefinition;
   }
 
-  public static getDefaultSettings() {
-    return this.defaultSettings;
-  }
-
-  public getSettingsDefinition(): sourceSettingsDefinitionType {
-    //@ts-ignore
-    return this.constructor.getSettingsDefinition();
-  }
-
-  public getDefaultSettings(): sourceSettingsType {
-    //@ts-ignore
-    return this.constructor.getDefaultSettings();
-  }
-
-  public getSettings() {
+  public getSettings(): T {
     return this.settings;
   }
 
-  public setSettings(settings: sourceSettingsType) {
-    const oldSettings = this.settings;
+  public setSettings(settings: T) {
+    const diffs = compareChanges(this.settings, settings) || {};
     this.settings = settings;
-    const diffs = compareChanges(oldSettings, this.settings);
-    if (Object.keys(diffs).length != 0)
-      this.emit('settingsChange', this, diffs);
+    this.emit('settingsChange', this, diffs);
   }
 
-  public async fetch(options: sourceOptionsType): Promise<fetchResultType> {
-    return { content: [] };
-  }
+  public abstract fetch(options: U): Promise<V>;
 
-  public async getFetchOptionsDefinition(): Promise<sourceOptionsDefinitionType> {
-    return {};
-  }
+  public abstract getFetchOptionsDefinition(): Promise<optionDefinition<U>>;
 }

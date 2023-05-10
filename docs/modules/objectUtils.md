@@ -27,4 +27,4 @@
 
 #### Defined in
 
-[src/utils/objectUtils.ts:1](https://github.com/medialib-project/medialib/blob/0cfc488/src/utils/objectUtils.ts#L1)
+[src/utils/objectUtils.ts:1](https://github.com/medialib-project/medialib/blob/3acd8bd/src/utils/objectUtils.ts#L1)

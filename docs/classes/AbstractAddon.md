@@ -1,6 +1,16 @@
 [@medialib/medialib](../README.md) / [Exports](../modules.md) / AbstractAddon
 
-# Class: AbstractAddon
+# Class: AbstractAddon<T, V, X\>
+
+**`No Inherit Doc`**
+
+## Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | extends [`basicAddonDetails`](../modules.md#basicaddondetails) = [`basicAddonDetails`](../modules.md#basicaddondetails) |
+| `V` | extends [`basicAddonResources`](../modules.md#basicaddonresources) = [`basicAddonResources`](../modules.md#basicaddonresources) |
+| `X` | extends [`basicAddonSettings`](../modules.md#basicaddonsettings) = [`basicAddonSettings`](../modules.md#basicaddonsettings) |
 
 ## Hierarchy
 
@@ -18,17 +28,11 @@
 
 ### Properties
 
+- [details](AbstractAddon.md#details)
 - [resources](AbstractAddon.md#resources)
-- [apiVersion](AbstractAddon.md#apiversion)
-- [authors](AbstractAddon.md#authors)
+- [settings](AbstractAddon.md#settings)
+- [settingsDefinition](AbstractAddon.md#settingsdefinition)
 - [defaultMaxListeners](AbstractAddon.md#defaultmaxlisteners)
-- [dependencies](AbstractAddon.md#dependencies)
-- [description](AbstractAddon.md#description)
-- [id](AbstractAddon.md#id)
-- [tags](AbstractAddon.md#tags)
-- [title](AbstractAddon.md#title)
-- [type](AbstractAddon.md#type)
-- [version](AbstractAddon.md#version)
 
 ### Methods
 
@@ -36,17 +40,11 @@
 - [emit](AbstractAddon.md#emit)
 - [error](AbstractAddon.md#error)
 - [eventNames](AbstractAddon.md#eventnames)
-- [getApiVersion](AbstractAddon.md#getapiversion)
-- [getAuthors](AbstractAddon.md#getauthors)
-- [getDependencies](AbstractAddon.md#getdependencies)
-- [getDescription](AbstractAddon.md#getdescription)
-- [getId](AbstractAddon.md#getid)
+- [getDetails](AbstractAddon.md#getdetails)
 - [getMaxListeners](AbstractAddon.md#getmaxlisteners)
 - [getResources](AbstractAddon.md#getresources)
-- [getTags](AbstractAddon.md#gettags)
-- [getTitle](AbstractAddon.md#gettitle)
-- [getType](AbstractAddon.md#gettype)
-- [getVersion](AbstractAddon.md#getversion)
+- [getSettings](AbstractAddon.md#getsettings)
+- [getSettingsDefinition](AbstractAddon.md#getsettingsdefinition)
 - [listenerCount](AbstractAddon.md#listenercount)
 - [listeners](AbstractAddon.md#listeners)
 - [log](AbstractAddon.md#log)
@@ -64,29 +62,31 @@
 - [removeAllListeners](AbstractAddon.md#removealllisteners)
 - [removeListener](AbstractAddon.md#removelistener)
 - [setMaxListeners](AbstractAddon.md#setmaxlisteners)
+- [setSettings](AbstractAddon.md#setsettings)
 - [warn](AbstractAddon.md#warn)
-- [getApiVersion](AbstractAddon.md#getapiversion-1)
-- [getAuthors](AbstractAddon.md#getauthors-1)
-- [getDependencies](AbstractAddon.md#getdependencies-1)
-- [getDescription](AbstractAddon.md#getdescription-1)
-- [getId](AbstractAddon.md#getid-1)
-- [getTags](AbstractAddon.md#gettags-1)
-- [getTitle](AbstractAddon.md#gettitle-1)
-- [getType](AbstractAddon.md#gettype-1)
-- [getVersion](AbstractAddon.md#getversion-1)
 - [listenerCount](AbstractAddon.md#listenercount-1)
 
 ## Constructors
 
 ### constructor
 
-• **new AbstractAddon**(`resources?`)
+• **new AbstractAddon**<`T`, `V`, `X`\>(`resources`, `details?`, `settingsDefinition?`)
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | extends [`basicAddonDetails`](../modules.md#basicaddondetails) = [`basicAddonDetails`](../modules.md#basicaddondetails) |
+| `V` | extends `Record`<`string`, `unknown`\> = `Record`<`string`, `unknown`\> |
+| `X` | extends `Record`<`string`, `unknown`\> = `Record`<`string`, `unknown`\> |
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `resources?` | [`addonResourcesType`](../interfaces/addonResourcesType.md) |
+| `resources` | `V` |
+| `details?` | `T` |
+| `settingsDefinition?` | [`optionDefinition`](../modules.md#optiondefinition)<`X`\> |
 
 #### Overrides
 
@@ -94,9 +94,19 @@ EventEmitter.constructor
 
 #### Defined in
 
-node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:15
+node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:21
 
 ## Properties
+
+### details
+
+• `Private` **details**: `any`
+
+#### Defined in
+
+node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:18
+
+___
 
 ### resources
 
@@ -104,27 +114,27 @@ node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:15
 
 #### Defined in
 
-node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:14
+node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:17
 
 ___
 
-### apiVersion
+### settings
 
-▪ `Static` `Protected` **apiVersion**: `string`
+• `Private` **settings**: `any`
 
 #### Defined in
 
-node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:9
+node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:19
 
 ___
 
-### authors
+### settingsDefinition
 
-▪ `Static` `Protected` **authors**: `string`[]
+• `Private` **settingsDefinition**: `any`
 
 #### Defined in
 
-node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:10
+node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:20
 
 ___
 
@@ -140,81 +150,11 @@ EventEmitter.defaultMaxListeners
 
 node_modules/@types/events/index.d.ts:11
 
-___
-
-### dependencies
-
-▪ `Static` `Protected` **dependencies**: `string`[]
-
-#### Defined in
-
-node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:13
-
-___
-
-### description
-
-▪ `Static` `Protected` **description**: `string`
-
-#### Defined in
-
-node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:11
-
-___
-
-### id
-
-▪ `Static` `Protected` **id**: `string`
-
-#### Defined in
-
-node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:5
-
-___
-
-### tags
-
-▪ `Static` `Protected` **tags**: `string`[]
-
-#### Defined in
-
-node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:12
-
-___
-
-### title
-
-▪ `Static` `Protected` **title**: `string`
-
-#### Defined in
-
-node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:6
-
-___
-
-### type
-
-▪ `Static` `Protected` **type**: `string`
-
-#### Defined in
-
-node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:7
-
-___
-
-### version
-
-▪ `Static` `Protected` **version**: `string`
-
-#### Defined in
-
-node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:8
-
 ## Methods
 
 ### addListener
 
-▸ **addListener**(`type`, `listener`): [`AbstractAddon`](AbstractAddon.md)
+▸ **addListener**(`type`, `listener`): [`AbstractAddon`](AbstractAddon.md)<`T`, `V`, `X`\>
 
 #### Parameters
 
@@ -225,7 +165,7 @@ node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:8
 
 #### Returns
 
-[`AbstractAddon`](AbstractAddon.md)
+[`AbstractAddon`](AbstractAddon.md)<`T`, `V`, `X`\>
 
 #### Inherited from
 
@@ -278,7 +218,7 @@ ___
 
 #### Defined in
 
-node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:42
+node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:38
 
 ___
 
@@ -300,73 +240,17 @@ node_modules/@types/events/index.d.ts:13
 
 ___
 
-### getApiVersion
+### getDetails
 
-▸ **getApiVersion**(): `string`
-
-#### Returns
-
-`string`
-
-#### Defined in
-
-node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:29
-
-___
-
-### getAuthors
-
-▸ **getAuthors**(): `string`[]
+▸ **getDetails**(): `T`
 
 #### Returns
 
-`string`[]
+`T`
 
 #### Defined in
 
-node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:30
-
-___
-
-### getDependencies
-
-▸ **getDependencies**(): `string`[]
-
-#### Returns
-
-`string`[]
-
-#### Defined in
-
-node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:33
-
-___
-
-### getDescription
-
-▸ **getDescription**(): `string`
-
-#### Returns
-
-`string`
-
-#### Defined in
-
-node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:31
-
-___
-
-### getId
-
-▸ **getId**(): `string`
-
-#### Returns
-
-`string`
-
-#### Defined in
-
-node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:25
+node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:26
 
 ___
 
@@ -390,53 +274,11 @@ ___
 
 ### getResources
 
-▸ **getResources**(): [`addonResourcesType`](../interfaces/addonResourcesType.md)
+▸ **getResources**(): `V`
 
 #### Returns
 
-[`addonResourcesType`](../interfaces/addonResourcesType.md)
-
-#### Defined in
-
-node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:34
-
-___
-
-### getTags
-
-▸ **getTags**(): `string`[]
-
-#### Returns
-
-`string`[]
-
-#### Defined in
-
-node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:32
-
-___
-
-### getTitle
-
-▸ **getTitle**(): `string`
-
-#### Returns
-
-`string`
-
-#### Defined in
-
-node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:26
-
-___
-
-### getType
-
-▸ **getType**(): `string`
-
-#### Returns
-
-`string`
+`V`
 
 #### Defined in
 
@@ -444,13 +286,27 @@ node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:27
 
 ___
 
-### getVersion
+### getSettings
 
-▸ **getVersion**(): `string`
+▸ **getSettings**(): `X`
 
 #### Returns
 
-`string`
+`X`
+
+#### Defined in
+
+node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:29
+
+___
+
+### getSettingsDefinition
+
+▸ **getSettingsDefinition**(): [`optionDefinition`](../modules.md#optiondefinition)<`X`\>
+
+#### Returns
+
+[`optionDefinition`](../modules.md#optiondefinition)<`X`\>
 
 #### Defined in
 
@@ -522,13 +378,13 @@ ___
 
 #### Defined in
 
-node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:40
+node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:36
 
 ___
 
 ### off
 
-▸ **off**(`type`, `listener`): [`AbstractAddon`](AbstractAddon.md)
+▸ **off**(`type`, `listener`): [`AbstractAddon`](AbstractAddon.md)<`T`, `V`, `X`\>
 
 #### Parameters
 
@@ -539,7 +395,7 @@ ___
 
 #### Returns
 
-[`AbstractAddon`](AbstractAddon.md)
+[`AbstractAddon`](AbstractAddon.md)<`T`, `V`, `X`\>
 
 #### Inherited from
 
@@ -553,7 +409,7 @@ ___
 
 ### on
 
-▸ **on**(`type`, `listener`): [`AbstractAddon`](AbstractAddon.md)
+▸ **on**(`type`, `listener`): [`AbstractAddon`](AbstractAddon.md)<`T`, `V`, `X`\>
 
 #### Parameters
 
@@ -564,7 +420,7 @@ ___
 
 #### Returns
 
-[`AbstractAddon`](AbstractAddon.md)
+[`AbstractAddon`](AbstractAddon.md)<`T`, `V`, `X`\>
 
 #### Inherited from
 
@@ -586,7 +442,7 @@ ___
 
 #### Defined in
 
-node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:35
+node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:31
 
 ___
 
@@ -600,7 +456,7 @@ ___
 
 #### Defined in
 
-node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:37
+node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:33
 
 ___
 
@@ -614,7 +470,7 @@ ___
 
 #### Defined in
 
-node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:39
+node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:35
 
 ___
 
@@ -628,7 +484,7 @@ ___
 
 #### Defined in
 
-node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:38
+node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:34
 
 ___
 
@@ -640,7 +496,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `previous` | [`AbstractAddon`](AbstractAddon.md) |
+| `previous` | [`AbstractAddon`](AbstractAddon.md)<[`basicAddonDetails`](../modules.md#basicaddondetails), `Record`<`string`, `unknown`\>, `Record`<`string`, `unknown`\>\> |
 
 #### Returns
 
@@ -648,13 +504,13 @@ ___
 
 #### Defined in
 
-node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:36
+node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:32
 
 ___
 
 ### once
 
-▸ **once**(`type`, `listener`): [`AbstractAddon`](AbstractAddon.md)
+▸ **once**(`type`, `listener`): [`AbstractAddon`](AbstractAddon.md)<`T`, `V`, `X`\>
 
 #### Parameters
 
@@ -665,7 +521,7 @@ ___
 
 #### Returns
 
-[`AbstractAddon`](AbstractAddon.md)
+[`AbstractAddon`](AbstractAddon.md)<`T`, `V`, `X`\>
 
 #### Inherited from
 
@@ -679,7 +535,7 @@ ___
 
 ### prependListener
 
-▸ **prependListener**(`type`, `listener`): [`AbstractAddon`](AbstractAddon.md)
+▸ **prependListener**(`type`, `listener`): [`AbstractAddon`](AbstractAddon.md)<`T`, `V`, `X`\>
 
 #### Parameters
 
@@ -690,7 +546,7 @@ ___
 
 #### Returns
 
-[`AbstractAddon`](AbstractAddon.md)
+[`AbstractAddon`](AbstractAddon.md)<`T`, `V`, `X`\>
 
 #### Inherited from
 
@@ -704,7 +560,7 @@ ___
 
 ### prependOnceListener
 
-▸ **prependOnceListener**(`type`, `listener`): [`AbstractAddon`](AbstractAddon.md)
+▸ **prependOnceListener**(`type`, `listener`): [`AbstractAddon`](AbstractAddon.md)<`T`, `V`, `X`\>
 
 #### Parameters
 
@@ -715,7 +571,7 @@ ___
 
 #### Returns
 
-[`AbstractAddon`](AbstractAddon.md)
+[`AbstractAddon`](AbstractAddon.md)<`T`, `V`, `X`\>
 
 #### Inherited from
 
@@ -753,7 +609,7 @@ ___
 
 ### removeAllListeners
 
-▸ **removeAllListeners**(`type?`): [`AbstractAddon`](AbstractAddon.md)
+▸ **removeAllListeners**(`type?`): [`AbstractAddon`](AbstractAddon.md)<`T`, `V`, `X`\>
 
 #### Parameters
 
@@ -763,7 +619,7 @@ ___
 
 #### Returns
 
-[`AbstractAddon`](AbstractAddon.md)
+[`AbstractAddon`](AbstractAddon.md)<`T`, `V`, `X`\>
 
 #### Inherited from
 
@@ -777,7 +633,7 @@ ___
 
 ### removeListener
 
-▸ **removeListener**(`type`, `listener`): [`AbstractAddon`](AbstractAddon.md)
+▸ **removeListener**(`type`, `listener`): [`AbstractAddon`](AbstractAddon.md)<`T`, `V`, `X`\>
 
 #### Parameters
 
@@ -788,7 +644,7 @@ ___
 
 #### Returns
 
-[`AbstractAddon`](AbstractAddon.md)
+[`AbstractAddon`](AbstractAddon.md)<`T`, `V`, `X`\>
 
 #### Inherited from
 
@@ -802,7 +658,7 @@ ___
 
 ### setMaxListeners
 
-▸ **setMaxListeners**(`n`): [`AbstractAddon`](AbstractAddon.md)
+▸ **setMaxListeners**(`n`): [`AbstractAddon`](AbstractAddon.md)<`T`, `V`, `X`\>
 
 #### Parameters
 
@@ -812,7 +668,7 @@ ___
 
 #### Returns
 
-[`AbstractAddon`](AbstractAddon.md)
+[`AbstractAddon`](AbstractAddon.md)<`T`, `V`, `X`\>
 
 #### Inherited from
 
@@ -821,6 +677,26 @@ EventEmitter.setMaxListeners
 #### Defined in
 
 node_modules/@types/events/index.d.ts:14
+
+___
+
+### setSettings
+
+▸ **setSettings**(`settings`): `void`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `settings` | `X` |
+
+#### Returns
+
+`void`
+
+#### Defined in
+
+node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:30
 
 ___
 
@@ -840,133 +716,7 @@ ___
 
 #### Defined in
 
-node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:41
-
-___
-
-### getApiVersion
-
-▸ `Static` **getApiVersion**(): `string`
-
-#### Returns
-
-`string`
-
-#### Defined in
-
-node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:20
-
-___
-
-### getAuthors
-
-▸ `Static` **getAuthors**(): `string`[]
-
-#### Returns
-
-`string`[]
-
-#### Defined in
-
-node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:21
-
-___
-
-### getDependencies
-
-▸ `Static` **getDependencies**(): `string`[]
-
-#### Returns
-
-`string`[]
-
-#### Defined in
-
-node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:24
-
-___
-
-### getDescription
-
-▸ `Static` **getDescription**(): `string`
-
-#### Returns
-
-`string`
-
-#### Defined in
-
-node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:22
-
-___
-
-### getId
-
-▸ `Static` **getId**(): `string`
-
-#### Returns
-
-`string`
-
-#### Defined in
-
-node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:16
-
-___
-
-### getTags
-
-▸ `Static` **getTags**(): `string`[]
-
-#### Returns
-
-`string`[]
-
-#### Defined in
-
-node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:23
-
-___
-
-### getTitle
-
-▸ `Static` **getTitle**(): `string`
-
-#### Returns
-
-`string`
-
-#### Defined in
-
-node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:17
-
-___
-
-### getType
-
-▸ `Static` **getType**(): `string`
-
-#### Returns
-
-`string`
-
-#### Defined in
-
-node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:18
-
-___
-
-### getVersion
-
-▸ `Static` **getVersion**(): `string`
-
-#### Returns
-
-`string`
-
-#### Defined in
-
-node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:19
+node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:37
 
 ___
 

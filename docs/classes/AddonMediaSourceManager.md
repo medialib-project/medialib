@@ -1,10 +1,21 @@
 [@medialib/medialib](../README.md) / [Exports](../modules.md) / AddonMediaSourceManager
 
-# Class: AddonMediaSourceManager
+# Class: AddonMediaSourceManager<T, V\>
+
+Only accepts Addons that are of the same type
+
+**`No Inherit Doc`**
+
+## Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | extends [`mediaSourceAddonManagerDetails`](../modules.md#mediasourceaddonmanagerdetails) = [`mediaSourceAddonManagerDetails`](../modules.md#mediasourceaddonmanagerdetails) |
+| `V` | extends [`AbstractMediaSourceAddon`](AbstractMediaSourceAddon.md) = [`AbstractMediaSourceAddon`](AbstractMediaSourceAddon.md) |
 
 ## Hierarchy
 
-- [`AbstractAddonManager`](AbstractAddonManager.md)
+- [`AbstractAddonManager`](AbstractAddonManager.md)<`T`, `V`\>
 
   ↳ **`AddonMediaSourceManager`**
 
@@ -17,7 +28,6 @@
 ### Properties
 
 - [defaultMaxListeners](AddonMediaSourceManager.md#defaultmaxlisteners)
-- [type](AddonMediaSourceManager.md#type)
 
 ### Methods
 
@@ -27,9 +37,9 @@
 - [eventNames](AddonMediaSourceManager.md#eventnames)
 - [getAll](AddonMediaSourceManager.md#getall)
 - [getById](AddonMediaSourceManager.md#getbyid)
+- [getDetails](AddonMediaSourceManager.md#getdetails)
 - [getIndexById](AddonMediaSourceManager.md#getindexbyid)
 - [getMaxListeners](AddonMediaSourceManager.md#getmaxlisteners)
-- [getType](AddonMediaSourceManager.md#gettype)
 - [haveById](AddonMediaSourceManager.md#havebyid)
 - [haveCorrectType](AddonMediaSourceManager.md#havecorrecttype)
 - [listenerCount](AddonMediaSourceManager.md#listenercount)
@@ -45,20 +55,27 @@
 - [removeListener](AddonMediaSourceManager.md#removelistener)
 - [set](AddonMediaSourceManager.md#set)
 - [setMaxListeners](AddonMediaSourceManager.md#setmaxlisteners)
-- [getType](AddonMediaSourceManager.md#gettype-1)
 - [listenerCount](AddonMediaSourceManager.md#listenercount-1)
 
 ## Constructors
 
 ### constructor
 
-• **new AddonMediaSourceManager**(`...sourcesAddons`)
+• **new AddonMediaSourceManager**<`T`, `V`\>(`sourcesAddons`, `details?`)
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | extends [`mediaSourceAddonManagerDetails`](../modules.md#mediasourceaddonmanagerdetails) = [`mediaSourceAddonManagerDetails`](../modules.md#mediasourceaddonmanagerdetails) |
+| `V` | extends [`AbstractMediaSourceAddon`](AbstractMediaSourceAddon.md)<[`AbstractMediaSource`](AbstractMediaSource.md)<`Record`<`string`, `unknown`\>, `Record`<`string`, `unknown`\>, [`mediaSourceFetchResult`](../modules.md#mediasourcefetchresult)\>, [`mediaSourceAddonDetails`](../modules.md#mediasourceaddondetails), `Record`<`string`, `unknown`\>, `Record`<`string`, `unknown`\>, `V`\> = [`AbstractMediaSourceAddon`](AbstractMediaSourceAddon.md)<[`AbstractMediaSource`](AbstractMediaSource.md)<`Record`<`string`, `unknown`\>, `Record`<`string`, `unknown`\>, [`mediaSourceFetchResult`](../modules.md#mediasourcefetchresult)\>, [`mediaSourceAddonDetails`](../modules.md#mediasourceaddondetails), `Record`<`string`, `unknown`\>, `Record`<`string`, `unknown`\>\> |
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `...sourcesAddons` | [`AbstractMediaSourceAddon`](AbstractMediaSourceAddon.md)[] |
+| `sourcesAddons` | `V`[] |
+| `details?` | `T` |
 
 #### Overrides
 
@@ -66,7 +83,7 @@
 
 #### Defined in
 
-[src/source/AddonMediaSourceManager.ts:7](https://github.com/medialib-project/medialib/blob/0cfc488/src/source/AddonMediaSourceManager.ts#L7)
+src/source/MediaSourceAddonManager.ts:9
 
 ## Properties
 
@@ -82,20 +99,6 @@
 
 node_modules/@types/events/index.d.ts:11
 
-___
-
-### type
-
-▪ `Static` **type**: `string` = `'media-source'`
-
-#### Overrides
-
-[AbstractAddonManager](AbstractAddonManager.md).[type](AbstractAddonManager.md#type)
-
-#### Defined in
-
-[src/source/AddonMediaSourceManager.ts:5](https://github.com/medialib-project/medialib/blob/0cfc488/src/source/AddonMediaSourceManager.ts#L5)
-
 ## Methods
 
 ### add
@@ -106,7 +109,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `addon` | [`AbstractAddon`](AbstractAddon.md) |
+| `addon` | `V` |
 
 #### Returns
 
@@ -118,13 +121,13 @@ ___
 
 #### Defined in
 
-node_modules/@addonlib/addonlib/dist/AbstractAddonManager.d.ts:15
+node_modules/@addonlib/addonlib/dist/AbstractAddonManager.d.ts:22
 
 ___
 
 ### addListener
 
-▸ **addListener**(`type`, `listener`): [`AddonMediaSourceManager`](AddonMediaSourceManager.md)
+▸ **addListener**(`type`, `listener`): [`AddonMediaSourceManager`](AddonMediaSourceManager.md)<`T`, `V`\>
 
 #### Parameters
 
@@ -135,7 +138,7 @@ ___
 
 #### Returns
 
-[`AddonMediaSourceManager`](AddonMediaSourceManager.md)
+[`AddonMediaSourceManager`](AddonMediaSourceManager.md)<`T`, `V`\>
 
 #### Inherited from
 
@@ -192,11 +195,11 @@ ___
 
 ### getAll
 
-▸ **getAll**(): [`AbstractAddon`](AbstractAddon.md)[]
+▸ **getAll**(): `V`[]
 
 #### Returns
 
-[`AbstractAddon`](AbstractAddon.md)[]
+`V`[]
 
 #### Inherited from
 
@@ -204,13 +207,13 @@ ___
 
 #### Defined in
 
-node_modules/@addonlib/addonlib/dist/AbstractAddonManager.d.ts:10
+node_modules/@addonlib/addonlib/dist/AbstractAddonManager.d.ts:17
 
 ___
 
 ### getById
 
-▸ **getById**(`id`): ``null`` \| [`AbstractAddon`](AbstractAddon.md)
+▸ **getById**(`id`): ``null`` \| `V`
 
 #### Parameters
 
@@ -220,7 +223,7 @@ ___
 
 #### Returns
 
-``null`` \| [`AbstractAddon`](AbstractAddon.md)
+``null`` \| `V`
 
 #### Inherited from
 
@@ -228,7 +231,25 @@ ___
 
 #### Defined in
 
-node_modules/@addonlib/addonlib/dist/AbstractAddonManager.d.ts:13
+node_modules/@addonlib/addonlib/dist/AbstractAddonManager.d.ts:20
+
+___
+
+### getDetails
+
+▸ **getDetails**(): `T`
+
+#### Returns
+
+`T`
+
+#### Inherited from
+
+[AbstractAddonManager](AbstractAddonManager.md).[getDetails](AbstractAddonManager.md#getdetails)
+
+#### Defined in
+
+node_modules/@addonlib/addonlib/dist/AbstractAddonManager.d.ts:16
 
 ___
 
@@ -252,7 +273,7 @@ ___
 
 #### Defined in
 
-node_modules/@addonlib/addonlib/dist/AbstractAddonManager.d.ts:12
+node_modules/@addonlib/addonlib/dist/AbstractAddonManager.d.ts:19
 
 ___
 
@@ -271,24 +292,6 @@ ___
 #### Defined in
 
 node_modules/@types/events/index.d.ts:15
-
-___
-
-### getType
-
-▸ **getType**(): `string`
-
-#### Returns
-
-`string`
-
-#### Inherited from
-
-[AbstractAddonManager](AbstractAddonManager.md).[getType](AbstractAddonManager.md#gettype)
-
-#### Defined in
-
-node_modules/@addonlib/addonlib/dist/AbstractAddonManager.d.ts:9
 
 ___
 
@@ -312,7 +315,7 @@ ___
 
 #### Defined in
 
-node_modules/@addonlib/addonlib/dist/AbstractAddonManager.d.ts:14
+node_modules/@addonlib/addonlib/dist/AbstractAddonManager.d.ts:21
 
 ___
 
@@ -324,7 +327,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `addon` | [`AbstractAddon`](AbstractAddon.md) |
+| `addon` | `V` |
 
 #### Returns
 
@@ -336,7 +339,7 @@ ___
 
 #### Defined in
 
-node_modules/@addonlib/addonlib/dist/AbstractAddonManager.d.ts:11
+node_modules/@addonlib/addonlib/dist/AbstractAddonManager.d.ts:18
 
 ___
 
@@ -390,7 +393,7 @@ ___
 
 ### off
 
-▸ **off**(`type`, `listener`): [`AddonMediaSourceManager`](AddonMediaSourceManager.md)
+▸ **off**(`type`, `listener`): [`AddonMediaSourceManager`](AddonMediaSourceManager.md)<`T`, `V`\>
 
 #### Parameters
 
@@ -401,7 +404,7 @@ ___
 
 #### Returns
 
-[`AddonMediaSourceManager`](AddonMediaSourceManager.md)
+[`AddonMediaSourceManager`](AddonMediaSourceManager.md)<`T`, `V`\>
 
 #### Inherited from
 
@@ -415,7 +418,7 @@ ___
 
 ### on
 
-▸ **on**(`type`, `listener`): [`AddonMediaSourceManager`](AddonMediaSourceManager.md)
+▸ **on**(`type`, `listener`): [`AddonMediaSourceManager`](AddonMediaSourceManager.md)<`T`, `V`\>
 
 #### Parameters
 
@@ -426,7 +429,7 @@ ___
 
 #### Returns
 
-[`AddonMediaSourceManager`](AddonMediaSourceManager.md)
+[`AddonMediaSourceManager`](AddonMediaSourceManager.md)<`T`, `V`\>
 
 #### Inherited from
 
@@ -440,7 +443,7 @@ ___
 
 ### once
 
-▸ **once**(`type`, `listener`): [`AddonMediaSourceManager`](AddonMediaSourceManager.md)
+▸ **once**(`type`, `listener`): [`AddonMediaSourceManager`](AddonMediaSourceManager.md)<`T`, `V`\>
 
 #### Parameters
 
@@ -451,7 +454,7 @@ ___
 
 #### Returns
 
-[`AddonMediaSourceManager`](AddonMediaSourceManager.md)
+[`AddonMediaSourceManager`](AddonMediaSourceManager.md)<`T`, `V`\>
 
 #### Inherited from
 
@@ -465,7 +468,7 @@ ___
 
 ### prependListener
 
-▸ **prependListener**(`type`, `listener`): [`AddonMediaSourceManager`](AddonMediaSourceManager.md)
+▸ **prependListener**(`type`, `listener`): [`AddonMediaSourceManager`](AddonMediaSourceManager.md)<`T`, `V`\>
 
 #### Parameters
 
@@ -476,7 +479,7 @@ ___
 
 #### Returns
 
-[`AddonMediaSourceManager`](AddonMediaSourceManager.md)
+[`AddonMediaSourceManager`](AddonMediaSourceManager.md)<`T`, `V`\>
 
 #### Inherited from
 
@@ -490,7 +493,7 @@ ___
 
 ### prependOnceListener
 
-▸ **prependOnceListener**(`type`, `listener`): [`AddonMediaSourceManager`](AddonMediaSourceManager.md)
+▸ **prependOnceListener**(`type`, `listener`): [`AddonMediaSourceManager`](AddonMediaSourceManager.md)<`T`, `V`\>
 
 #### Parameters
 
@@ -501,7 +504,7 @@ ___
 
 #### Returns
 
-[`AddonMediaSourceManager`](AddonMediaSourceManager.md)
+[`AddonMediaSourceManager`](AddonMediaSourceManager.md)<`T`, `V`\>
 
 #### Inherited from
 
@@ -545,7 +548,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `addon` | [`AbstractAddon`](AbstractAddon.md) |
+| `addon` | `V` |
 
 #### Returns
 
@@ -557,13 +560,13 @@ ___
 
 #### Defined in
 
-node_modules/@addonlib/addonlib/dist/AbstractAddonManager.d.ts:16
+node_modules/@addonlib/addonlib/dist/AbstractAddonManager.d.ts:23
 
 ___
 
 ### removeAllListeners
 
-▸ **removeAllListeners**(`type?`): [`AddonMediaSourceManager`](AddonMediaSourceManager.md)
+▸ **removeAllListeners**(`type?`): [`AddonMediaSourceManager`](AddonMediaSourceManager.md)<`T`, `V`\>
 
 #### Parameters
 
@@ -573,7 +576,7 @@ ___
 
 #### Returns
 
-[`AddonMediaSourceManager`](AddonMediaSourceManager.md)
+[`AddonMediaSourceManager`](AddonMediaSourceManager.md)<`T`, `V`\>
 
 #### Inherited from
 
@@ -587,7 +590,7 @@ ___
 
 ### removeListener
 
-▸ **removeListener**(`type`, `listener`): [`AddonMediaSourceManager`](AddonMediaSourceManager.md)
+▸ **removeListener**(`type`, `listener`): [`AddonMediaSourceManager`](AddonMediaSourceManager.md)<`T`, `V`\>
 
 #### Parameters
 
@@ -598,7 +601,7 @@ ___
 
 #### Returns
 
-[`AddonMediaSourceManager`](AddonMediaSourceManager.md)
+[`AddonMediaSourceManager`](AddonMediaSourceManager.md)<`T`, `V`\>
 
 #### Inherited from
 
@@ -622,7 +625,7 @@ set the addon list without any check
 
 | Name | Type |
 | :------ | :------ |
-| `addons` | [`AbstractAddon`](AbstractAddon.md)[] |
+| `addons` | `V`[] |
 
 #### Returns
 
@@ -634,13 +637,13 @@ set the addon list without any check
 
 #### Defined in
 
-node_modules/@addonlib/addonlib/dist/AbstractAddonManager.d.ts:21
+node_modules/@addonlib/addonlib/dist/AbstractAddonManager.d.ts:28
 
 ___
 
 ### setMaxListeners
 
-▸ **setMaxListeners**(`n`): [`AddonMediaSourceManager`](AddonMediaSourceManager.md)
+▸ **setMaxListeners**(`n`): [`AddonMediaSourceManager`](AddonMediaSourceManager.md)<`T`, `V`\>
 
 #### Parameters
 
@@ -650,7 +653,7 @@ ___
 
 #### Returns
 
-[`AddonMediaSourceManager`](AddonMediaSourceManager.md)
+[`AddonMediaSourceManager`](AddonMediaSourceManager.md)<`T`, `V`\>
 
 #### Inherited from
 
@@ -659,24 +662,6 @@ ___
 #### Defined in
 
 node_modules/@types/events/index.d.ts:14
-
-___
-
-### getType
-
-▸ `Static` **getType**(): `string`
-
-#### Returns
-
-`string`
-
-#### Inherited from
-
-[AbstractAddonManager](AbstractAddonManager.md).[getType](AbstractAddonManager.md#gettype-1)
-
-#### Defined in
-
-node_modules/@addonlib/addonlib/dist/AbstractAddonManager.d.ts:8
 
 ___
 

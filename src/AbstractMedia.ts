@@ -1,19 +1,11 @@
-import { mediaOptions } from './mediaType';
+import { basicMediaDetails } from './mediaTypes';
 
-export default class AbstractMedia {
-  private id: string;
-  private title: string;
+export default class AbstractMedia<
+  T extends basicMediaDetails = basicMediaDetails
+> {
+  public constructor(private details: T) {}
 
-  public constructor({ id, title }: mediaOptions) {
-    this.id = id;
-    this.title = title;
-  }
-
-  public getId() {
-    return this.id;
-  }
-
-  public getTitle() {
-    return this.title;
+  public getDetails() {
+    return this.details;
   }
 }

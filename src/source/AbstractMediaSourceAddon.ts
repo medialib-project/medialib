@@ -1,24 +1,40 @@
-import { AbstractAddon, addonResourcesType } from '@addonlib/addonlib';
+import { AbstractAddon, optionDefinition } from '@addonlib/addonlib';
 import AbstractMediaSource from './AbstractMediaSource';
-import { sourceSettingsType } from './sourceSettingsType';
+import {
+  mediaSourceAddonDetails,
+  mediaSourceAddonResources,
+} from './mediaSourceAddonTypes';
+import { mediaSourceSettings } from './mediaSourceTypes';
 
-export default abstract class AbstractMediaSourceAddon extends AbstractAddon {
-  protected static type = 'media-source';
+export default abstract class AbstractMediaSourceAddon<
+  T extends AbstractMediaSource = AbstractMediaSource,
+  U extends mediaSourceAddonDetails = mediaSourceAddonDetails,
+  V extends mediaSourceAddonResources = mediaSourceAddonResources,
+  W extends mediaSourceSettings = mediaSourceSettings
+> extends AbstractAddon {
+  private source!: T;
 
-  private source: AbstractMediaSource;
-
-  public constructor(
-    resources: addonResourcesType,
-    settings: sourceSettingsType = {}
-  ) {
-    super(resources);
-    //@ts-ignore
-    this.source = new this.getSourceClass()(settings);
+  public constructor(resources: V, details?: U, sourceClass?: new () => T) {
+    super(resources, {
+      ...{ type: 'media-source' },
+      ...details,
+    } as U);
+    this.source = new (sourceClass as new () => T)();
   }
-
-  public abstract getSourceClass(): AbstractMediaSource;
 
   public getSource() {
     return this.source;
+  }
+
+  public getSettings(): W {
+    return this.getSource().getSettings() as W;
+  }
+
+  public setSettings(settings: W) {
+    this.getSource().setSettings(settings);
+  }
+
+  public getSettingsDefinition(): optionDefinition<W> {
+    return this.getSource().getSettingsDefinition() as optionDefinition<W>;
   }
 }

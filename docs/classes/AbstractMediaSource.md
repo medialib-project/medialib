@@ -1,6 +1,14 @@
 [@medialib/medialib](../README.md) / [Exports](../modules.md) / AbstractMediaSource
 
-# Class: AbstractMediaSource
+# Class: AbstractMediaSource<T, U, V\>
+
+## Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | extends [`mediaSourceSettings`](../modules.md#mediasourcesettings) = [`mediaSourceSettings`](../modules.md#mediasourcesettings) |
+| `U` | extends [`mediaSourceFetchOption`](../modules.md#mediasourcefetchoption) = [`mediaSourceFetchOption`](../modules.md#mediasourcefetchoption) |
+| `V` | extends [`mediaSourceFetchResult`](../modules.md#mediasourcefetchresult) = [`mediaSourceFetchResult`](../modules.md#mediasourcefetchresult) |
 
 ## Hierarchy
 
@@ -19,9 +27,8 @@
 ### Properties
 
 - [settings](AbstractMediaSource.md#settings)
-- [defaultMaxListeners](AbstractMediaSource.md#defaultmaxlisteners)
-- [defaultSettings](AbstractMediaSource.md#defaultsettings)
 - [settingsDefinition](AbstractMediaSource.md#settingsdefinition)
+- [defaultMaxListeners](AbstractMediaSource.md#defaultmaxlisteners)
 
 ### Methods
 
@@ -29,7 +36,6 @@
 - [emit](AbstractMediaSource.md#emit)
 - [eventNames](AbstractMediaSource.md#eventnames)
 - [fetch](AbstractMediaSource.md#fetch)
-- [getDefaultSettings](AbstractMediaSource.md#getdefaultsettings)
 - [getFetchOptionsDefinition](AbstractMediaSource.md#getfetchoptionsdefinition)
 - [getMaxListeners](AbstractMediaSource.md#getmaxlisteners)
 - [getSettings](AbstractMediaSource.md#getsettings)
@@ -46,21 +52,27 @@
 - [removeListener](AbstractMediaSource.md#removelistener)
 - [setMaxListeners](AbstractMediaSource.md#setmaxlisteners)
 - [setSettings](AbstractMediaSource.md#setsettings)
-- [getDefaultSettings](AbstractMediaSource.md#getdefaultsettings-1)
-- [getSettingsDefinition](AbstractMediaSource.md#getsettingsdefinition-1)
 - [listenerCount](AbstractMediaSource.md#listenercount-1)
 
 ## Constructors
 
 ### constructor
 
-• **new AbstractMediaSource**(`settings?`)
+• **new AbstractMediaSource**<`T`, `U`, `V`\>(`settingsDefinition?`)
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | extends `Record`<`string`, `unknown`\> = `Record`<`string`, `unknown`\> |
+| `U` | extends `Record`<`string`, `unknown`\> = `Record`<`string`, `unknown`\> |
+| `V` | extends [`mediaSourceFetchResult`](../modules.md#mediasourcefetchresult) = [`mediaSourceFetchResult`](../modules.md#mediasourcefetchresult) |
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `settings?` | [`sourceSettingsType`](../interfaces/sourceSettingsType.md) |
+| `settingsDefinition?` | [`optionDefinition`](../modules.md#optiondefinition)<`T`\> |
 
 #### Overrides
 
@@ -68,17 +80,27 @@ EventEmitter.constructor
 
 #### Defined in
 
-[src/source/AbstractMediaSource.ts:19](https://github.com/medialib-project/medialib/blob/0cfc488/src/source/AbstractMediaSource.ts#L19)
+[src/source/AbstractMediaSource.ts:19](https://github.com/medialib-project/medialib/blob/3acd8bd/src/source/AbstractMediaSource.ts#L19)
 
 ## Properties
 
 ### settings
 
-• `Private` **settings**: [`sourceSettingsType`](../interfaces/sourceSettingsType.md)
+• `Private` **settings**: `T`
 
 #### Defined in
 
-[src/source/AbstractMediaSource.ts:17](https://github.com/medialib-project/medialib/blob/0cfc488/src/source/AbstractMediaSource.ts#L17)
+[src/source/AbstractMediaSource.ts:17](https://github.com/medialib-project/medialib/blob/3acd8bd/src/source/AbstractMediaSource.ts#L17)
+
+___
+
+### settingsDefinition
+
+• `Private` **settingsDefinition**: [`optionDefinition`](../modules.md#optiondefinition)<`T`\>
+
+#### Defined in
+
+[src/source/AbstractMediaSource.ts:16](https://github.com/medialib-project/medialib/blob/3acd8bd/src/source/AbstractMediaSource.ts#L16)
 
 ___
 
@@ -94,31 +116,11 @@ EventEmitter.defaultMaxListeners
 
 node_modules/@types/events/index.d.ts:11
 
-___
-
-### defaultSettings
-
-▪ `Static` `Protected` **defaultSettings**: [`sourceSettingsType`](../interfaces/sourceSettingsType.md) = `{}`
-
-#### Defined in
-
-[src/source/AbstractMediaSource.ts:15](https://github.com/medialib-project/medialib/blob/0cfc488/src/source/AbstractMediaSource.ts#L15)
-
-___
-
-### settingsDefinition
-
-▪ `Static` `Protected` **settingsDefinition**: [`sourceSettingsDefinitionType`](../interfaces/sourceSettingsDefinitionType.md) = `{}`
-
-#### Defined in
-
-[src/source/AbstractMediaSource.ts:14](https://github.com/medialib-project/medialib/blob/0cfc488/src/source/AbstractMediaSource.ts#L14)
-
 ## Methods
 
 ### addListener
 
-▸ **addListener**(`type`, `listener`): [`AbstractMediaSource`](AbstractMediaSource.md)
+▸ **addListener**(`type`, `listener`): [`AbstractMediaSource`](AbstractMediaSource.md)<`T`, `U`, `V`\>
 
 #### Parameters
 
@@ -129,7 +131,7 @@ ___
 
 #### Returns
 
-[`AbstractMediaSource`](AbstractMediaSource.md)
+[`AbstractMediaSource`](AbstractMediaSource.md)<`T`, `U`, `V`\>
 
 #### Inherited from
 
@@ -186,49 +188,35 @@ ___
 
 ### fetch
 
-▸ **fetch**(`options`): `Promise`<[`fetchResultType`](../interfaces/fetchResultType.md)\>
+▸ `Abstract` **fetch**(`options`): `Promise`<`V`\>
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `options` | [`sourceOptionsType`](../interfaces/sourceOptionsType.md) |
+| `options` | `U` |
 
 #### Returns
 
-`Promise`<[`fetchResultType`](../interfaces/fetchResultType.md)\>
+`Promise`<`V`\>
 
 #### Defined in
 
-[src/source/AbstractMediaSource.ts:54](https://github.com/medialib-project/medialib/blob/0cfc488/src/source/AbstractMediaSource.ts#L54)
-
-___
-
-### getDefaultSettings
-
-▸ **getDefaultSettings**(): [`sourceSettingsType`](../interfaces/sourceSettingsType.md)
-
-#### Returns
-
-[`sourceSettingsType`](../interfaces/sourceSettingsType.md)
-
-#### Defined in
-
-[src/source/AbstractMediaSource.ts:37](https://github.com/medialib-project/medialib/blob/0cfc488/src/source/AbstractMediaSource.ts#L37)
+[src/source/AbstractMediaSource.ts:41](https://github.com/medialib-project/medialib/blob/3acd8bd/src/source/AbstractMediaSource.ts#L41)
 
 ___
 
 ### getFetchOptionsDefinition
 
-▸ **getFetchOptionsDefinition**(): `Promise`<[`sourceOptionsDefinitionType`](../interfaces/sourceOptionsDefinitionType.md)\>
+▸ `Abstract` **getFetchOptionsDefinition**(): `Promise`<[`optionDefinition`](../modules.md#optiondefinition)<`U`\>\>
 
 #### Returns
 
-`Promise`<[`sourceOptionsDefinitionType`](../interfaces/sourceOptionsDefinitionType.md)\>
+`Promise`<[`optionDefinition`](../modules.md#optiondefinition)<`U`\>\>
 
 #### Defined in
 
-[src/source/AbstractMediaSource.ts:58](https://github.com/medialib-project/medialib/blob/0cfc488/src/source/AbstractMediaSource.ts#L58)
+[src/source/AbstractMediaSource.ts:43](https://github.com/medialib-project/medialib/blob/3acd8bd/src/source/AbstractMediaSource.ts#L43)
 
 ___
 
@@ -252,29 +240,29 @@ ___
 
 ### getSettings
 
-▸ **getSettings**(): [`sourceSettingsType`](../interfaces/sourceSettingsType.md)
+▸ **getSettings**(): `T`
 
 #### Returns
 
-[`sourceSettingsType`](../interfaces/sourceSettingsType.md)
+`T`
 
 #### Defined in
 
-[src/source/AbstractMediaSource.ts:42](https://github.com/medialib-project/medialib/blob/0cfc488/src/source/AbstractMediaSource.ts#L42)
+[src/source/AbstractMediaSource.ts:31](https://github.com/medialib-project/medialib/blob/3acd8bd/src/source/AbstractMediaSource.ts#L31)
 
 ___
 
 ### getSettingsDefinition
 
-▸ **getSettingsDefinition**(): [`sourceSettingsDefinitionType`](../interfaces/sourceSettingsDefinitionType.md)
+▸ **getSettingsDefinition**(): [`optionDefinition`](../modules.md#optiondefinition)<`T`\>
 
 #### Returns
 
-[`sourceSettingsDefinitionType`](../interfaces/sourceSettingsDefinitionType.md)
+[`optionDefinition`](../modules.md#optiondefinition)<`T`\>
 
 #### Defined in
 
-[src/source/AbstractMediaSource.ts:32](https://github.com/medialib-project/medialib/blob/0cfc488/src/source/AbstractMediaSource.ts#L32)
+[src/source/AbstractMediaSource.ts:27](https://github.com/medialib-project/medialib/blob/3acd8bd/src/source/AbstractMediaSource.ts#L27)
 
 ___
 
@@ -328,7 +316,7 @@ ___
 
 ### off
 
-▸ **off**(`type`, `listener`): [`AbstractMediaSource`](AbstractMediaSource.md)
+▸ **off**(`type`, `listener`): [`AbstractMediaSource`](AbstractMediaSource.md)<`T`, `U`, `V`\>
 
 #### Parameters
 
@@ -339,7 +327,7 @@ ___
 
 #### Returns
 
-[`AbstractMediaSource`](AbstractMediaSource.md)
+[`AbstractMediaSource`](AbstractMediaSource.md)<`T`, `U`, `V`\>
 
 #### Inherited from
 
@@ -353,7 +341,7 @@ ___
 
 ### on
 
-▸ **on**(`type`, `listener`): [`AbstractMediaSource`](AbstractMediaSource.md)
+▸ **on**(`type`, `listener`): [`AbstractMediaSource`](AbstractMediaSource.md)<`T`, `U`, `V`\>
 
 #### Parameters
 
@@ -364,7 +352,7 @@ ___
 
 #### Returns
 
-[`AbstractMediaSource`](AbstractMediaSource.md)
+[`AbstractMediaSource`](AbstractMediaSource.md)<`T`, `U`, `V`\>
 
 #### Inherited from
 
@@ -378,7 +366,7 @@ ___
 
 ### once
 
-▸ **once**(`type`, `listener`): [`AbstractMediaSource`](AbstractMediaSource.md)
+▸ **once**(`type`, `listener`): [`AbstractMediaSource`](AbstractMediaSource.md)<`T`, `U`, `V`\>
 
 #### Parameters
 
@@ -389,7 +377,7 @@ ___
 
 #### Returns
 
-[`AbstractMediaSource`](AbstractMediaSource.md)
+[`AbstractMediaSource`](AbstractMediaSource.md)<`T`, `U`, `V`\>
 
 #### Inherited from
 
@@ -403,7 +391,7 @@ ___
 
 ### prependListener
 
-▸ **prependListener**(`type`, `listener`): [`AbstractMediaSource`](AbstractMediaSource.md)
+▸ **prependListener**(`type`, `listener`): [`AbstractMediaSource`](AbstractMediaSource.md)<`T`, `U`, `V`\>
 
 #### Parameters
 
@@ -414,7 +402,7 @@ ___
 
 #### Returns
 
-[`AbstractMediaSource`](AbstractMediaSource.md)
+[`AbstractMediaSource`](AbstractMediaSource.md)<`T`, `U`, `V`\>
 
 #### Inherited from
 
@@ -428,7 +416,7 @@ ___
 
 ### prependOnceListener
 
-▸ **prependOnceListener**(`type`, `listener`): [`AbstractMediaSource`](AbstractMediaSource.md)
+▸ **prependOnceListener**(`type`, `listener`): [`AbstractMediaSource`](AbstractMediaSource.md)<`T`, `U`, `V`\>
 
 #### Parameters
 
@@ -439,7 +427,7 @@ ___
 
 #### Returns
 
-[`AbstractMediaSource`](AbstractMediaSource.md)
+[`AbstractMediaSource`](AbstractMediaSource.md)<`T`, `U`, `V`\>
 
 #### Inherited from
 
@@ -477,7 +465,7 @@ ___
 
 ### removeAllListeners
 
-▸ **removeAllListeners**(`type?`): [`AbstractMediaSource`](AbstractMediaSource.md)
+▸ **removeAllListeners**(`type?`): [`AbstractMediaSource`](AbstractMediaSource.md)<`T`, `U`, `V`\>
 
 #### Parameters
 
@@ -487,7 +475,7 @@ ___
 
 #### Returns
 
-[`AbstractMediaSource`](AbstractMediaSource.md)
+[`AbstractMediaSource`](AbstractMediaSource.md)<`T`, `U`, `V`\>
 
 #### Inherited from
 
@@ -501,7 +489,7 @@ ___
 
 ### removeListener
 
-▸ **removeListener**(`type`, `listener`): [`AbstractMediaSource`](AbstractMediaSource.md)
+▸ **removeListener**(`type`, `listener`): [`AbstractMediaSource`](AbstractMediaSource.md)<`T`, `U`, `V`\>
 
 #### Parameters
 
@@ -512,7 +500,7 @@ ___
 
 #### Returns
 
-[`AbstractMediaSource`](AbstractMediaSource.md)
+[`AbstractMediaSource`](AbstractMediaSource.md)<`T`, `U`, `V`\>
 
 #### Inherited from
 
@@ -526,7 +514,7 @@ ___
 
 ### setMaxListeners
 
-▸ **setMaxListeners**(`n`): [`AbstractMediaSource`](AbstractMediaSource.md)
+▸ **setMaxListeners**(`n`): [`AbstractMediaSource`](AbstractMediaSource.md)<`T`, `U`, `V`\>
 
 #### Parameters
 
@@ -536,7 +524,7 @@ ___
 
 #### Returns
 
-[`AbstractMediaSource`](AbstractMediaSource.md)
+[`AbstractMediaSource`](AbstractMediaSource.md)<`T`, `U`, `V`\>
 
 #### Inherited from
 
@@ -556,7 +544,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `settings` | [`sourceSettingsType`](../interfaces/sourceSettingsType.md) |
+| `settings` | `T` |
 
 #### Returns
 
@@ -564,35 +552,7 @@ ___
 
 #### Defined in
 
-[src/source/AbstractMediaSource.ts:46](https://github.com/medialib-project/medialib/blob/0cfc488/src/source/AbstractMediaSource.ts#L46)
-
-___
-
-### getDefaultSettings
-
-▸ `Static` **getDefaultSettings**(): [`sourceSettingsType`](../interfaces/sourceSettingsType.md)
-
-#### Returns
-
-[`sourceSettingsType`](../interfaces/sourceSettingsType.md)
-
-#### Defined in
-
-[src/source/AbstractMediaSource.ts:28](https://github.com/medialib-project/medialib/blob/0cfc488/src/source/AbstractMediaSource.ts#L28)
-
-___
-
-### getSettingsDefinition
-
-▸ `Static` **getSettingsDefinition**(): [`sourceSettingsDefinitionType`](../interfaces/sourceSettingsDefinitionType.md)
-
-#### Returns
-
-[`sourceSettingsDefinitionType`](../interfaces/sourceSettingsDefinitionType.md)
-
-#### Defined in
-
-[src/source/AbstractMediaSource.ts:24](https://github.com/medialib-project/medialib/blob/0cfc488/src/source/AbstractMediaSource.ts#L24)
+[src/source/AbstractMediaSource.ts:35](https://github.com/medialib-project/medialib/blob/3acd8bd/src/source/AbstractMediaSource.ts#L35)
 
 ___
 

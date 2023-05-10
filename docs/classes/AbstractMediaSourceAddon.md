@@ -1,6 +1,17 @@
 [@medialib/medialib](../README.md) / [Exports](../modules.md) / AbstractMediaSourceAddon
 
-# Class: AbstractMediaSourceAddon
+# Class: AbstractMediaSourceAddon<T, U, V, W\>
+
+**`No Inherit Doc`**
+
+## Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | extends [`AbstractMediaSource`](AbstractMediaSource.md) = [`AbstractMediaSource`](AbstractMediaSource.md) |
+| `U` | extends [`mediaSourceAddonDetails`](../modules.md#mediasourceaddondetails) = [`mediaSourceAddonDetails`](../modules.md#mediasourceaddondetails) |
+| `V` | extends [`mediaSourceAddonResources`](../modules.md#mediasourceaddonresources) = [`mediaSourceAddonResources`](../modules.md#mediasourceaddonresources) |
+| `W` | extends [`mediaSourceSettings`](../modules.md#mediasourcesettings) = [`mediaSourceSettings`](../modules.md#mediasourcesettings) |
 
 ## Hierarchy
 
@@ -17,16 +28,7 @@
 ### Properties
 
 - [source](AbstractMediaSourceAddon.md#source)
-- [apiVersion](AbstractMediaSourceAddon.md#apiversion)
-- [authors](AbstractMediaSourceAddon.md#authors)
 - [defaultMaxListeners](AbstractMediaSourceAddon.md#defaultmaxlisteners)
-- [dependencies](AbstractMediaSourceAddon.md#dependencies)
-- [description](AbstractMediaSourceAddon.md#description)
-- [id](AbstractMediaSourceAddon.md#id)
-- [tags](AbstractMediaSourceAddon.md#tags)
-- [title](AbstractMediaSourceAddon.md#title)
-- [type](AbstractMediaSourceAddon.md#type)
-- [version](AbstractMediaSourceAddon.md#version)
 
 ### Methods
 
@@ -34,19 +36,12 @@
 - [emit](AbstractMediaSourceAddon.md#emit)
 - [error](AbstractMediaSourceAddon.md#error)
 - [eventNames](AbstractMediaSourceAddon.md#eventnames)
-- [getApiVersion](AbstractMediaSourceAddon.md#getapiversion)
-- [getAuthors](AbstractMediaSourceAddon.md#getauthors)
-- [getDependencies](AbstractMediaSourceAddon.md#getdependencies)
-- [getDescription](AbstractMediaSourceAddon.md#getdescription)
-- [getId](AbstractMediaSourceAddon.md#getid)
+- [getDetails](AbstractMediaSourceAddon.md#getdetails)
 - [getMaxListeners](AbstractMediaSourceAddon.md#getmaxlisteners)
 - [getResources](AbstractMediaSourceAddon.md#getresources)
+- [getSettings](AbstractMediaSourceAddon.md#getsettings)
+- [getSettingsDefinition](AbstractMediaSourceAddon.md#getsettingsdefinition)
 - [getSource](AbstractMediaSourceAddon.md#getsource)
-- [getSourceClass](AbstractMediaSourceAddon.md#getsourceclass)
-- [getTags](AbstractMediaSourceAddon.md#gettags)
-- [getTitle](AbstractMediaSourceAddon.md#gettitle)
-- [getType](AbstractMediaSourceAddon.md#gettype)
-- [getVersion](AbstractMediaSourceAddon.md#getversion)
 - [listenerCount](AbstractMediaSourceAddon.md#listenercount)
 - [listeners](AbstractMediaSourceAddon.md#listeners)
 - [log](AbstractMediaSourceAddon.md#log)
@@ -64,30 +59,32 @@
 - [removeAllListeners](AbstractMediaSourceAddon.md#removealllisteners)
 - [removeListener](AbstractMediaSourceAddon.md#removelistener)
 - [setMaxListeners](AbstractMediaSourceAddon.md#setmaxlisteners)
+- [setSettings](AbstractMediaSourceAddon.md#setsettings)
 - [warn](AbstractMediaSourceAddon.md#warn)
-- [getApiVersion](AbstractMediaSourceAddon.md#getapiversion-1)
-- [getAuthors](AbstractMediaSourceAddon.md#getauthors-1)
-- [getDependencies](AbstractMediaSourceAddon.md#getdependencies-1)
-- [getDescription](AbstractMediaSourceAddon.md#getdescription-1)
-- [getId](AbstractMediaSourceAddon.md#getid-1)
-- [getTags](AbstractMediaSourceAddon.md#gettags-1)
-- [getTitle](AbstractMediaSourceAddon.md#gettitle-1)
-- [getType](AbstractMediaSourceAddon.md#gettype-1)
-- [getVersion](AbstractMediaSourceAddon.md#getversion-1)
 - [listenerCount](AbstractMediaSourceAddon.md#listenercount-1)
 
 ## Constructors
 
 ### constructor
 
-• **new AbstractMediaSourceAddon**(`resources`, `settings?`)
+• **new AbstractMediaSourceAddon**<`T`, `U`, `V`, `W`\>(`resources`, `details?`, `sourceClass?`)
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | extends [`AbstractMediaSource`](AbstractMediaSource.md)<`Record`<`string`, `unknown`\>, `Record`<`string`, `unknown`\>, [`mediaSourceFetchResult`](../modules.md#mediasourcefetchresult), `T`\> = [`AbstractMediaSource`](AbstractMediaSource.md)<`Record`<`string`, `unknown`\>, `Record`<`string`, `unknown`\>, [`mediaSourceFetchResult`](../modules.md#mediasourcefetchresult)\> |
+| `U` | extends [`mediaSourceAddonDetails`](../modules.md#mediasourceaddondetails) = [`mediaSourceAddonDetails`](../modules.md#mediasourceaddondetails) |
+| `V` | extends `Record`<`string`, `unknown`\> = `Record`<`string`, `unknown`\> |
+| `W` | extends `Record`<`string`, `unknown`\> = `Record`<`string`, `unknown`\> |
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `resources` | [`addonResourcesType`](../interfaces/addonResourcesType.md) |
-| `settings` | [`sourceSettingsType`](../interfaces/sourceSettingsType.md) |
+| `resources` | `V` |
+| `details?` | `U` |
+| `sourceClass?` | () => `T` |
 
 #### Overrides
 
@@ -95,45 +92,17 @@
 
 #### Defined in
 
-[src/source/AbstractMediaSourceAddon.ts:10](https://github.com/medialib-project/medialib/blob/0cfc488/src/source/AbstractMediaSourceAddon.ts#L10)
+[src/source/AbstractMediaSourceAddon.ts:17](https://github.com/medialib-project/medialib/blob/3acd8bd/src/source/AbstractMediaSourceAddon.ts#L17)
 
 ## Properties
 
 ### source
 
-• `Private` **source**: [`AbstractMediaSource`](AbstractMediaSource.md)
+• `Private` **source**: `T`
 
 #### Defined in
 
-[src/source/AbstractMediaSourceAddon.ts:8](https://github.com/medialib-project/medialib/blob/0cfc488/src/source/AbstractMediaSourceAddon.ts#L8)
-
-___
-
-### apiVersion
-
-▪ `Static` `Protected` **apiVersion**: `string`
-
-#### Inherited from
-
-[AbstractAddon](AbstractAddon.md).[apiVersion](AbstractAddon.md#apiversion)
-
-#### Defined in
-
-node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:9
-
-___
-
-### authors
-
-▪ `Static` `Protected` **authors**: `string`[]
-
-#### Inherited from
-
-[AbstractAddon](AbstractAddon.md).[authors](AbstractAddon.md#authors)
-
-#### Defined in
-
-node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:10
+[src/source/AbstractMediaSourceAddon.ts:15](https://github.com/medialib-project/medialib/blob/3acd8bd/src/source/AbstractMediaSourceAddon.ts#L15)
 
 ___
 
@@ -149,109 +118,11 @@ ___
 
 node_modules/@types/events/index.d.ts:11
 
-___
-
-### dependencies
-
-▪ `Static` `Protected` **dependencies**: `string`[]
-
-#### Inherited from
-
-[AbstractAddon](AbstractAddon.md).[dependencies](AbstractAddon.md#dependencies)
-
-#### Defined in
-
-node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:13
-
-___
-
-### description
-
-▪ `Static` `Protected` **description**: `string`
-
-#### Inherited from
-
-[AbstractAddon](AbstractAddon.md).[description](AbstractAddon.md#description)
-
-#### Defined in
-
-node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:11
-
-___
-
-### id
-
-▪ `Static` `Protected` **id**: `string`
-
-#### Inherited from
-
-[AbstractAddon](AbstractAddon.md).[id](AbstractAddon.md#id)
-
-#### Defined in
-
-node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:5
-
-___
-
-### tags
-
-▪ `Static` `Protected` **tags**: `string`[]
-
-#### Inherited from
-
-[AbstractAddon](AbstractAddon.md).[tags](AbstractAddon.md#tags)
-
-#### Defined in
-
-node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:12
-
-___
-
-### title
-
-▪ `Static` `Protected` **title**: `string`
-
-#### Inherited from
-
-[AbstractAddon](AbstractAddon.md).[title](AbstractAddon.md#title)
-
-#### Defined in
-
-node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:6
-
-___
-
-### type
-
-▪ `Static` `Protected` **type**: `string` = `'media-source'`
-
-#### Overrides
-
-[AbstractAddon](AbstractAddon.md).[type](AbstractAddon.md#type)
-
-#### Defined in
-
-[src/source/AbstractMediaSourceAddon.ts:6](https://github.com/medialib-project/medialib/blob/0cfc488/src/source/AbstractMediaSourceAddon.ts#L6)
-
-___
-
-### version
-
-▪ `Static` `Protected` **version**: `string`
-
-#### Inherited from
-
-[AbstractAddon](AbstractAddon.md).[version](AbstractAddon.md#version)
-
-#### Defined in
-
-node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:8
-
 ## Methods
 
 ### addListener
 
-▸ **addListener**(`type`, `listener`): [`AbstractMediaSourceAddon`](AbstractMediaSourceAddon.md)
+▸ **addListener**(`type`, `listener`): [`AbstractMediaSourceAddon`](AbstractMediaSourceAddon.md)<`T`, `U`, `V`, `W`\>
 
 #### Parameters
 
@@ -262,7 +133,7 @@ node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:8
 
 #### Returns
 
-[`AbstractMediaSourceAddon`](AbstractMediaSourceAddon.md)
+[`AbstractMediaSourceAddon`](AbstractMediaSourceAddon.md)<`T`, `U`, `V`, `W`\>
 
 #### Inherited from
 
@@ -319,7 +190,7 @@ ___
 
 #### Defined in
 
-node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:42
+node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:38
 
 ___
 
@@ -341,93 +212,21 @@ node_modules/@types/events/index.d.ts:13
 
 ___
 
-### getApiVersion
+### getDetails
 
-▸ **getApiVersion**(): `string`
-
-#### Returns
-
-`string`
-
-#### Inherited from
-
-[AbstractAddon](AbstractAddon.md).[getApiVersion](AbstractAddon.md#getapiversion)
-
-#### Defined in
-
-node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:29
-
-___
-
-### getAuthors
-
-▸ **getAuthors**(): `string`[]
+▸ **getDetails**(): [`basicAddonDetails`](../modules.md#basicaddondetails)
 
 #### Returns
 
-`string`[]
+[`basicAddonDetails`](../modules.md#basicaddondetails)
 
 #### Inherited from
 
-[AbstractAddon](AbstractAddon.md).[getAuthors](AbstractAddon.md#getauthors)
+[AbstractAddon](AbstractAddon.md).[getDetails](AbstractAddon.md#getdetails)
 
 #### Defined in
 
-node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:30
-
-___
-
-### getDependencies
-
-▸ **getDependencies**(): `string`[]
-
-#### Returns
-
-`string`[]
-
-#### Inherited from
-
-[AbstractAddon](AbstractAddon.md).[getDependencies](AbstractAddon.md#getdependencies)
-
-#### Defined in
-
-node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:33
-
-___
-
-### getDescription
-
-▸ **getDescription**(): `string`
-
-#### Returns
-
-`string`
-
-#### Inherited from
-
-[AbstractAddon](AbstractAddon.md).[getDescription](AbstractAddon.md#getdescription)
-
-#### Defined in
-
-node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:31
-
-___
-
-### getId
-
-▸ **getId**(): `string`
-
-#### Returns
-
-`string`
-
-#### Inherited from
-
-[AbstractAddon](AbstractAddon.md).[getId](AbstractAddon.md#getid)
-
-#### Defined in
-
-node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:25
+node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:26
 
 ___
 
@@ -451,11 +250,11 @@ ___
 
 ### getResources
 
-▸ **getResources**(): [`addonResourcesType`](../interfaces/addonResourcesType.md)
+▸ **getResources**(): `Record`<`string`, `unknown`\>
 
 #### Returns
 
-[`addonResourcesType`](../interfaces/addonResourcesType.md)
+`Record`<`string`, `unknown`\>
 
 #### Inherited from
 
@@ -463,107 +262,57 @@ ___
 
 #### Defined in
 
-node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:34
+node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:27
+
+___
+
+### getSettings
+
+▸ **getSettings**(): `W`
+
+#### Returns
+
+`W`
+
+#### Overrides
+
+[AbstractAddon](AbstractAddon.md).[getSettings](AbstractAddon.md#getsettings)
+
+#### Defined in
+
+[src/source/AbstractMediaSourceAddon.ts:29](https://github.com/medialib-project/medialib/blob/3acd8bd/src/source/AbstractMediaSourceAddon.ts#L29)
+
+___
+
+### getSettingsDefinition
+
+▸ **getSettingsDefinition**(): [`optionDefinition`](../modules.md#optiondefinition)<`W`\>
+
+#### Returns
+
+[`optionDefinition`](../modules.md#optiondefinition)<`W`\>
+
+#### Overrides
+
+[AbstractAddon](AbstractAddon.md).[getSettingsDefinition](AbstractAddon.md#getsettingsdefinition)
+
+#### Defined in
+
+[src/source/AbstractMediaSourceAddon.ts:37](https://github.com/medialib-project/medialib/blob/3acd8bd/src/source/AbstractMediaSourceAddon.ts#L37)
 
 ___
 
 ### getSource
 
-▸ **getSource**(): [`AbstractMediaSource`](AbstractMediaSource.md)
+▸ **getSource**(): `T`
 
 #### Returns
 
-[`AbstractMediaSource`](AbstractMediaSource.md)
+`T`
 
 #### Defined in
 
-[src/source/AbstractMediaSourceAddon.ts:21](https://github.com/medialib-project/medialib/blob/0cfc488/src/source/AbstractMediaSourceAddon.ts#L21)
-
-___
-
-### getSourceClass
-
-▸ `Abstract` **getSourceClass**(): [`AbstractMediaSource`](AbstractMediaSource.md)
-
-#### Returns
-
-[`AbstractMediaSource`](AbstractMediaSource.md)
-
-#### Defined in
-
-[src/source/AbstractMediaSourceAddon.ts:19](https://github.com/medialib-project/medialib/blob/0cfc488/src/source/AbstractMediaSourceAddon.ts#L19)
-
-___
-
-### getTags
-
-▸ **getTags**(): `string`[]
-
-#### Returns
-
-`string`[]
-
-#### Inherited from
-
-[AbstractAddon](AbstractAddon.md).[getTags](AbstractAddon.md#gettags)
-
-#### Defined in
-
-node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:32
-
-___
-
-### getTitle
-
-▸ **getTitle**(): `string`
-
-#### Returns
-
-`string`
-
-#### Inherited from
-
-[AbstractAddon](AbstractAddon.md).[getTitle](AbstractAddon.md#gettitle)
-
-#### Defined in
-
-node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:26
-
-___
-
-### getType
-
-▸ **getType**(): `string`
-
-#### Returns
-
-`string`
-
-#### Inherited from
-
-[AbstractAddon](AbstractAddon.md).[getType](AbstractAddon.md#gettype)
-
-#### Defined in
-
-node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:27
-
-___
-
-### getVersion
-
-▸ **getVersion**(): `string`
-
-#### Returns
-
-`string`
-
-#### Inherited from
-
-[AbstractAddon](AbstractAddon.md).[getVersion](AbstractAddon.md#getversion)
-
-#### Defined in
-
-node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:28
+[src/source/AbstractMediaSourceAddon.ts:25](https://github.com/medialib-project/medialib/blob/3acd8bd/src/source/AbstractMediaSourceAddon.ts#L25)
 
 ___
 
@@ -635,13 +384,13 @@ ___
 
 #### Defined in
 
-node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:40
+node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:36
 
 ___
 
 ### off
 
-▸ **off**(`type`, `listener`): [`AbstractMediaSourceAddon`](AbstractMediaSourceAddon.md)
+▸ **off**(`type`, `listener`): [`AbstractMediaSourceAddon`](AbstractMediaSourceAddon.md)<`T`, `U`, `V`, `W`\>
 
 #### Parameters
 
@@ -652,7 +401,7 @@ ___
 
 #### Returns
 
-[`AbstractMediaSourceAddon`](AbstractMediaSourceAddon.md)
+[`AbstractMediaSourceAddon`](AbstractMediaSourceAddon.md)<`T`, `U`, `V`, `W`\>
 
 #### Inherited from
 
@@ -666,7 +415,7 @@ ___
 
 ### on
 
-▸ **on**(`type`, `listener`): [`AbstractMediaSourceAddon`](AbstractMediaSourceAddon.md)
+▸ **on**(`type`, `listener`): [`AbstractMediaSourceAddon`](AbstractMediaSourceAddon.md)<`T`, `U`, `V`, `W`\>
 
 #### Parameters
 
@@ -677,7 +426,7 @@ ___
 
 #### Returns
 
-[`AbstractMediaSourceAddon`](AbstractMediaSourceAddon.md)
+[`AbstractMediaSourceAddon`](AbstractMediaSourceAddon.md)<`T`, `U`, `V`, `W`\>
 
 #### Inherited from
 
@@ -703,7 +452,7 @@ ___
 
 #### Defined in
 
-node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:35
+node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:31
 
 ___
 
@@ -721,7 +470,7 @@ ___
 
 #### Defined in
 
-node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:37
+node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:33
 
 ___
 
@@ -739,7 +488,7 @@ ___
 
 #### Defined in
 
-node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:39
+node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:35
 
 ___
 
@@ -757,7 +506,7 @@ ___
 
 #### Defined in
 
-node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:38
+node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:34
 
 ___
 
@@ -769,7 +518,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `previous` | [`AbstractAddon`](AbstractAddon.md) |
+| `previous` | [`AbstractAddon`](AbstractAddon.md)<[`basicAddonDetails`](../modules.md#basicaddondetails), `Record`<`string`, `unknown`\>, `Record`<`string`, `unknown`\>\> |
 
 #### Returns
 
@@ -781,13 +530,13 @@ ___
 
 #### Defined in
 
-node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:36
+node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:32
 
 ___
 
 ### once
 
-▸ **once**(`type`, `listener`): [`AbstractMediaSourceAddon`](AbstractMediaSourceAddon.md)
+▸ **once**(`type`, `listener`): [`AbstractMediaSourceAddon`](AbstractMediaSourceAddon.md)<`T`, `U`, `V`, `W`\>
 
 #### Parameters
 
@@ -798,7 +547,7 @@ ___
 
 #### Returns
 
-[`AbstractMediaSourceAddon`](AbstractMediaSourceAddon.md)
+[`AbstractMediaSourceAddon`](AbstractMediaSourceAddon.md)<`T`, `U`, `V`, `W`\>
 
 #### Inherited from
 
@@ -812,7 +561,7 @@ ___
 
 ### prependListener
 
-▸ **prependListener**(`type`, `listener`): [`AbstractMediaSourceAddon`](AbstractMediaSourceAddon.md)
+▸ **prependListener**(`type`, `listener`): [`AbstractMediaSourceAddon`](AbstractMediaSourceAddon.md)<`T`, `U`, `V`, `W`\>
 
 #### Parameters
 
@@ -823,7 +572,7 @@ ___
 
 #### Returns
 
-[`AbstractMediaSourceAddon`](AbstractMediaSourceAddon.md)
+[`AbstractMediaSourceAddon`](AbstractMediaSourceAddon.md)<`T`, `U`, `V`, `W`\>
 
 #### Inherited from
 
@@ -837,7 +586,7 @@ ___
 
 ### prependOnceListener
 
-▸ **prependOnceListener**(`type`, `listener`): [`AbstractMediaSourceAddon`](AbstractMediaSourceAddon.md)
+▸ **prependOnceListener**(`type`, `listener`): [`AbstractMediaSourceAddon`](AbstractMediaSourceAddon.md)<`T`, `U`, `V`, `W`\>
 
 #### Parameters
 
@@ -848,7 +597,7 @@ ___
 
 #### Returns
 
-[`AbstractMediaSourceAddon`](AbstractMediaSourceAddon.md)
+[`AbstractMediaSourceAddon`](AbstractMediaSourceAddon.md)<`T`, `U`, `V`, `W`\>
 
 #### Inherited from
 
@@ -886,7 +635,7 @@ ___
 
 ### removeAllListeners
 
-▸ **removeAllListeners**(`type?`): [`AbstractMediaSourceAddon`](AbstractMediaSourceAddon.md)
+▸ **removeAllListeners**(`type?`): [`AbstractMediaSourceAddon`](AbstractMediaSourceAddon.md)<`T`, `U`, `V`, `W`\>
 
 #### Parameters
 
@@ -896,7 +645,7 @@ ___
 
 #### Returns
 
-[`AbstractMediaSourceAddon`](AbstractMediaSourceAddon.md)
+[`AbstractMediaSourceAddon`](AbstractMediaSourceAddon.md)<`T`, `U`, `V`, `W`\>
 
 #### Inherited from
 
@@ -910,7 +659,7 @@ ___
 
 ### removeListener
 
-▸ **removeListener**(`type`, `listener`): [`AbstractMediaSourceAddon`](AbstractMediaSourceAddon.md)
+▸ **removeListener**(`type`, `listener`): [`AbstractMediaSourceAddon`](AbstractMediaSourceAddon.md)<`T`, `U`, `V`, `W`\>
 
 #### Parameters
 
@@ -921,7 +670,7 @@ ___
 
 #### Returns
 
-[`AbstractMediaSourceAddon`](AbstractMediaSourceAddon.md)
+[`AbstractMediaSourceAddon`](AbstractMediaSourceAddon.md)<`T`, `U`, `V`, `W`\>
 
 #### Inherited from
 
@@ -935,7 +684,7 @@ ___
 
 ### setMaxListeners
 
-▸ **setMaxListeners**(`n`): [`AbstractMediaSourceAddon`](AbstractMediaSourceAddon.md)
+▸ **setMaxListeners**(`n`): [`AbstractMediaSourceAddon`](AbstractMediaSourceAddon.md)<`T`, `U`, `V`, `W`\>
 
 #### Parameters
 
@@ -945,7 +694,7 @@ ___
 
 #### Returns
 
-[`AbstractMediaSourceAddon`](AbstractMediaSourceAddon.md)
+[`AbstractMediaSourceAddon`](AbstractMediaSourceAddon.md)<`T`, `U`, `V`, `W`\>
 
 #### Inherited from
 
@@ -954,6 +703,30 @@ ___
 #### Defined in
 
 node_modules/@types/events/index.d.ts:14
+
+___
+
+### setSettings
+
+▸ **setSettings**(`settings`): `void`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `settings` | `W` |
+
+#### Returns
+
+`void`
+
+#### Overrides
+
+[AbstractAddon](AbstractAddon.md).[setSettings](AbstractAddon.md#setsettings)
+
+#### Defined in
+
+[src/source/AbstractMediaSourceAddon.ts:33](https://github.com/medialib-project/medialib/blob/3acd8bd/src/source/AbstractMediaSourceAddon.ts#L33)
 
 ___
 
@@ -977,169 +750,7 @@ ___
 
 #### Defined in
 
-node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:41
-
-___
-
-### getApiVersion
-
-▸ `Static` **getApiVersion**(): `string`
-
-#### Returns
-
-`string`
-
-#### Inherited from
-
-[AbstractAddon](AbstractAddon.md).[getApiVersion](AbstractAddon.md#getapiversion-1)
-
-#### Defined in
-
-node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:20
-
-___
-
-### getAuthors
-
-▸ `Static` **getAuthors**(): `string`[]
-
-#### Returns
-
-`string`[]
-
-#### Inherited from
-
-[AbstractAddon](AbstractAddon.md).[getAuthors](AbstractAddon.md#getauthors-1)
-
-#### Defined in
-
-node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:21
-
-___
-
-### getDependencies
-
-▸ `Static` **getDependencies**(): `string`[]
-
-#### Returns
-
-`string`[]
-
-#### Inherited from
-
-[AbstractAddon](AbstractAddon.md).[getDependencies](AbstractAddon.md#getdependencies-1)
-
-#### Defined in
-
-node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:24
-
-___
-
-### getDescription
-
-▸ `Static` **getDescription**(): `string`
-
-#### Returns
-
-`string`
-
-#### Inherited from
-
-[AbstractAddon](AbstractAddon.md).[getDescription](AbstractAddon.md#getdescription-1)
-
-#### Defined in
-
-node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:22
-
-___
-
-### getId
-
-▸ `Static` **getId**(): `string`
-
-#### Returns
-
-`string`
-
-#### Inherited from
-
-[AbstractAddon](AbstractAddon.md).[getId](AbstractAddon.md#getid-1)
-
-#### Defined in
-
-node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:16
-
-___
-
-### getTags
-
-▸ `Static` **getTags**(): `string`[]
-
-#### Returns
-
-`string`[]
-
-#### Inherited from
-
-[AbstractAddon](AbstractAddon.md).[getTags](AbstractAddon.md#gettags-1)
-
-#### Defined in
-
-node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:23
-
-___
-
-### getTitle
-
-▸ `Static` **getTitle**(): `string`
-
-#### Returns
-
-`string`
-
-#### Inherited from
-
-[AbstractAddon](AbstractAddon.md).[getTitle](AbstractAddon.md#gettitle-1)
-
-#### Defined in
-
-node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:17
-
-___
-
-### getType
-
-▸ `Static` **getType**(): `string`
-
-#### Returns
-
-`string`
-
-#### Inherited from
-
-[AbstractAddon](AbstractAddon.md).[getType](AbstractAddon.md#gettype-1)
-
-#### Defined in
-
-node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:18
-
-___
-
-### getVersion
-
-▸ `Static` **getVersion**(): `string`
-
-#### Returns
-
-`string`
-
-#### Inherited from
-
-[AbstractAddon](AbstractAddon.md).[getVersion](AbstractAddon.md#getversion-1)
-
-#### Defined in
-
-node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:19
+node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:37
 
 ___
 

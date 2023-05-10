@@ -1,10 +1,18 @@
 [@medialib/medialib](../README.md) / [Exports](../modules.md) / AbstractWebSource
 
-# Class: AbstractWebSource
+# Class: AbstractWebSource<T, U, V\>
+
+## Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | extends [`webMediaSourceSettings`](../modules.md#webmediasourcesettings) = [`webMediaSourceSettings`](../modules.md#webmediasourcesettings) |
+| `U` | extends [`webMediaSourceFetchOption`](../modules.md#webmediasourcefetchoption) = [`webMediaSourceFetchOption`](../modules.md#webmediasourcefetchoption) |
+| `V` | extends [`webMediaSourceFetchResult`](../modules.md#webmediasourcefetchresult) = [`webMediaSourceFetchResult`](../modules.md#webmediasourcefetchresult) |
 
 ## Hierarchy
 
-- [`AbstractMediaSource`](AbstractMediaSource.md)
+- [`AbstractMediaSource`](AbstractMediaSource.md)<`T`, `U`, `V`\>
 
   ↳ **`AbstractWebSource`**
 
@@ -18,8 +26,6 @@
 
 - [webInstance](AbstractWebSource.md#webinstance)
 - [defaultMaxListeners](AbstractWebSource.md#defaultmaxlisteners)
-- [defaultSettings](AbstractWebSource.md#defaultsettings)
-- [settingsDefinition](AbstractWebSource.md#settingsdefinition)
 
 ### Methods
 
@@ -27,7 +33,6 @@
 - [emit](AbstractWebSource.md#emit)
 - [eventNames](AbstractWebSource.md#eventnames)
 - [fetch](AbstractWebSource.md#fetch)
-- [getDefaultSettings](AbstractWebSource.md#getdefaultsettings)
 - [getFetchOptionsDefinition](AbstractWebSource.md#getfetchoptionsdefinition)
 - [getMaxListeners](AbstractWebSource.md#getmaxlisteners)
 - [getSettings](AbstractWebSource.md#getsettings)
@@ -46,21 +51,27 @@
 - [resetWebInstance](AbstractWebSource.md#resetwebinstance)
 - [setMaxListeners](AbstractWebSource.md#setmaxlisteners)
 - [setSettings](AbstractWebSource.md#setsettings)
-- [getDefaultSettings](AbstractWebSource.md#getdefaultsettings-1)
-- [getSettingsDefinition](AbstractWebSource.md#getsettingsdefinition-1)
 - [listenerCount](AbstractWebSource.md#listenercount-1)
 
 ## Constructors
 
 ### constructor
 
-• **new AbstractWebSource**(`settings?`)
+• **new AbstractWebSource**<`T`, `U`, `V`\>(`settingsDefinition?`)
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | extends [`webMediaSourceSettings`](../modules.md#webmediasourcesettings) = [`webMediaSourceSettings`](../modules.md#webmediasourcesettings) |
+| `U` | extends [`webMediaSourceFetchOption`](../modules.md#webmediasourcefetchoption) = [`webMediaSourceFetchOption`](../modules.md#webmediasourcefetchoption) |
+| `V` | extends [`webMediaSourceFetchResult`](../modules.md#webmediasourcefetchresult) = [`webMediaSourceFetchResult`](../modules.md#webmediasourcefetchresult) |
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `settings?` | [`sourceSettingsType`](../interfaces/sourceSettingsType.md) |
+| `settingsDefinition?` | [`optionDefinition`](../modules.md#optiondefinition)<`T`\> |
 
 #### Overrides
 
@@ -68,7 +79,7 @@
 
 #### Defined in
 
-[src/source/web/AbstractWebSource.ts:20](https://github.com/medialib-project/medialib/blob/0cfc488/src/source/web/AbstractWebSource.ts#L20)
+src/source/web/AbstractWebMediaSource.ts:19
 
 ## Properties
 
@@ -78,7 +89,7 @@
 
 #### Defined in
 
-[src/source/web/AbstractWebSource.ts:18](https://github.com/medialib-project/medialib/blob/0cfc488/src/source/web/AbstractWebSource.ts#L18)
+src/source/web/AbstractWebMediaSource.ts:17
 
 ___
 
@@ -94,39 +105,11 @@ ___
 
 node_modules/@types/events/index.d.ts:11
 
-___
-
-### defaultSettings
-
-▪ `Static` `Protected` **defaultSettings**: [`sourceSettingsType`](../interfaces/sourceSettingsType.md)
-
-#### Overrides
-
-[AbstractMediaSource](AbstractMediaSource.md).[defaultSettings](AbstractMediaSource.md#defaultsettings)
-
-#### Defined in
-
-[src/source/web/AbstractWebSource.ts:13](https://github.com/medialib-project/medialib/blob/0cfc488/src/source/web/AbstractWebSource.ts#L13)
-
-___
-
-### settingsDefinition
-
-▪ `Static` `Protected` **settingsDefinition**: [`sourceSettingsDefinitionType`](../interfaces/sourceSettingsDefinitionType.md)
-
-#### Overrides
-
-[AbstractMediaSource](AbstractMediaSource.md).[settingsDefinition](AbstractMediaSource.md#settingsdefinition)
-
-#### Defined in
-
-[src/source/web/AbstractWebSource.ts:9](https://github.com/medialib-project/medialib/blob/0cfc488/src/source/web/AbstractWebSource.ts#L9)
-
 ## Methods
 
 ### addListener
 
-▸ **addListener**(`type`, `listener`): [`AbstractWebSource`](AbstractWebSource.md)
+▸ **addListener**(`type`, `listener`): [`AbstractWebSource`](AbstractWebSource.md)<`T`, `U`, `V`\>
 
 #### Parameters
 
@@ -137,7 +120,7 @@ ___
 
 #### Returns
 
-[`AbstractWebSource`](AbstractWebSource.md)
+[`AbstractWebSource`](AbstractWebSource.md)<`T`, `U`, `V`\>
 
 #### Inherited from
 
@@ -194,17 +177,17 @@ ___
 
 ### fetch
 
-▸ **fetch**(`options`): `Promise`<[`fetchResultType`](../interfaces/fetchResultType.md)\>
+▸ `Abstract` **fetch**(`options`): `Promise`<`V`\>
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `options` | [`sourceOptionsType`](../interfaces/sourceOptionsType.md) |
+| `options` | `U` |
 
 #### Returns
 
-`Promise`<[`fetchResultType`](../interfaces/fetchResultType.md)\>
+`Promise`<`V`\>
 
 #### Inherited from
 
@@ -212,35 +195,17 @@ ___
 
 #### Defined in
 
-[src/source/AbstractMediaSource.ts:54](https://github.com/medialib-project/medialib/blob/0cfc488/src/source/AbstractMediaSource.ts#L54)
-
-___
-
-### getDefaultSettings
-
-▸ **getDefaultSettings**(): [`sourceSettingsType`](../interfaces/sourceSettingsType.md)
-
-#### Returns
-
-[`sourceSettingsType`](../interfaces/sourceSettingsType.md)
-
-#### Inherited from
-
-[AbstractMediaSource](AbstractMediaSource.md).[getDefaultSettings](AbstractMediaSource.md#getdefaultsettings)
-
-#### Defined in
-
-[src/source/AbstractMediaSource.ts:37](https://github.com/medialib-project/medialib/blob/0cfc488/src/source/AbstractMediaSource.ts#L37)
+[src/source/AbstractMediaSource.ts:41](https://github.com/medialib-project/medialib/blob/3acd8bd/src/source/AbstractMediaSource.ts#L41)
 
 ___
 
 ### getFetchOptionsDefinition
 
-▸ **getFetchOptionsDefinition**(): `Promise`<[`sourceOptionsDefinitionType`](../interfaces/sourceOptionsDefinitionType.md)\>
+▸ `Abstract` **getFetchOptionsDefinition**(): `Promise`<[`optionDefinition`](../modules.md#optiondefinition)<`U`\>\>
 
 #### Returns
 
-`Promise`<[`sourceOptionsDefinitionType`](../interfaces/sourceOptionsDefinitionType.md)\>
+`Promise`<[`optionDefinition`](../modules.md#optiondefinition)<`U`\>\>
 
 #### Inherited from
 
@@ -248,7 +213,7 @@ ___
 
 #### Defined in
 
-[src/source/AbstractMediaSource.ts:58](https://github.com/medialib-project/medialib/blob/0cfc488/src/source/AbstractMediaSource.ts#L58)
+[src/source/AbstractMediaSource.ts:43](https://github.com/medialib-project/medialib/blob/3acd8bd/src/source/AbstractMediaSource.ts#L43)
 
 ___
 
@@ -272,11 +237,11 @@ ___
 
 ### getSettings
 
-▸ **getSettings**(): [`sourceSettingsType`](../interfaces/sourceSettingsType.md)
+▸ **getSettings**(): `T`
 
 #### Returns
 
-[`sourceSettingsType`](../interfaces/sourceSettingsType.md)
+`T`
 
 #### Inherited from
 
@@ -284,17 +249,17 @@ ___
 
 #### Defined in
 
-[src/source/AbstractMediaSource.ts:42](https://github.com/medialib-project/medialib/blob/0cfc488/src/source/AbstractMediaSource.ts#L42)
+[src/source/AbstractMediaSource.ts:31](https://github.com/medialib-project/medialib/blob/3acd8bd/src/source/AbstractMediaSource.ts#L31)
 
 ___
 
 ### getSettingsDefinition
 
-▸ **getSettingsDefinition**(): [`sourceSettingsDefinitionType`](../interfaces/sourceSettingsDefinitionType.md)
+▸ **getSettingsDefinition**(): [`optionDefinition`](../modules.md#optiondefinition)<`T`\>
 
 #### Returns
 
-[`sourceSettingsDefinitionType`](../interfaces/sourceSettingsDefinitionType.md)
+[`optionDefinition`](../modules.md#optiondefinition)<`T`\>
 
 #### Inherited from
 
@@ -302,7 +267,7 @@ ___
 
 #### Defined in
 
-[src/source/AbstractMediaSource.ts:32](https://github.com/medialib-project/medialib/blob/0cfc488/src/source/AbstractMediaSource.ts#L32)
+[src/source/AbstractMediaSource.ts:27](https://github.com/medialib-project/medialib/blob/3acd8bd/src/source/AbstractMediaSource.ts#L27)
 
 ___
 
@@ -356,7 +321,7 @@ ___
 
 ### off
 
-▸ **off**(`type`, `listener`): [`AbstractWebSource`](AbstractWebSource.md)
+▸ **off**(`type`, `listener`): [`AbstractWebSource`](AbstractWebSource.md)<`T`, `U`, `V`\>
 
 #### Parameters
 
@@ -367,7 +332,7 @@ ___
 
 #### Returns
 
-[`AbstractWebSource`](AbstractWebSource.md)
+[`AbstractWebSource`](AbstractWebSource.md)<`T`, `U`, `V`\>
 
 #### Inherited from
 
@@ -381,7 +346,7 @@ ___
 
 ### on
 
-▸ **on**(`type`, `listener`): [`AbstractWebSource`](AbstractWebSource.md)
+▸ **on**(`type`, `listener`): [`AbstractWebSource`](AbstractWebSource.md)<`T`, `U`, `V`\>
 
 #### Parameters
 
@@ -392,7 +357,7 @@ ___
 
 #### Returns
 
-[`AbstractWebSource`](AbstractWebSource.md)
+[`AbstractWebSource`](AbstractWebSource.md)<`T`, `U`, `V`\>
 
 #### Inherited from
 
@@ -412,7 +377,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `_` | [`AbstractMediaSource`](AbstractMediaSource.md) |
+| `_` | [`AbstractWebSource`](AbstractWebSource.md)<[`webMediaSourceSettings`](../modules.md#webmediasourcesettings), [`webMediaSourceFetchOption`](../modules.md#webmediasourcefetchoption), [`webMediaSourceFetchResult`](../modules.md#webmediasourcefetchresult)\> |
 | `changes` | [`diffType`](../modules.md#difftype) |
 
 #### Returns
@@ -421,13 +386,13 @@ ___
 
 #### Defined in
 
-[src/source/web/AbstractWebSource.ts:26](https://github.com/medialib-project/medialib/blob/0cfc488/src/source/web/AbstractWebSource.ts#L26)
+src/source/web/AbstractWebMediaSource.ts:25
 
 ___
 
 ### once
 
-▸ **once**(`type`, `listener`): [`AbstractWebSource`](AbstractWebSource.md)
+▸ **once**(`type`, `listener`): [`AbstractWebSource`](AbstractWebSource.md)<`T`, `U`, `V`\>
 
 #### Parameters
 
@@ -438,7 +403,7 @@ ___
 
 #### Returns
 
-[`AbstractWebSource`](AbstractWebSource.md)
+[`AbstractWebSource`](AbstractWebSource.md)<`T`, `U`, `V`\>
 
 #### Inherited from
 
@@ -452,7 +417,7 @@ ___
 
 ### prependListener
 
-▸ **prependListener**(`type`, `listener`): [`AbstractWebSource`](AbstractWebSource.md)
+▸ **prependListener**(`type`, `listener`): [`AbstractWebSource`](AbstractWebSource.md)<`T`, `U`, `V`\>
 
 #### Parameters
 
@@ -463,7 +428,7 @@ ___
 
 #### Returns
 
-[`AbstractWebSource`](AbstractWebSource.md)
+[`AbstractWebSource`](AbstractWebSource.md)<`T`, `U`, `V`\>
 
 #### Inherited from
 
@@ -477,7 +442,7 @@ ___
 
 ### prependOnceListener
 
-▸ **prependOnceListener**(`type`, `listener`): [`AbstractWebSource`](AbstractWebSource.md)
+▸ **prependOnceListener**(`type`, `listener`): [`AbstractWebSource`](AbstractWebSource.md)<`T`, `U`, `V`\>
 
 #### Parameters
 
@@ -488,7 +453,7 @@ ___
 
 #### Returns
 
-[`AbstractWebSource`](AbstractWebSource.md)
+[`AbstractWebSource`](AbstractWebSource.md)<`T`, `U`, `V`\>
 
 #### Inherited from
 
@@ -526,7 +491,7 @@ ___
 
 ### removeAllListeners
 
-▸ **removeAllListeners**(`type?`): [`AbstractWebSource`](AbstractWebSource.md)
+▸ **removeAllListeners**(`type?`): [`AbstractWebSource`](AbstractWebSource.md)<`T`, `U`, `V`\>
 
 #### Parameters
 
@@ -536,7 +501,7 @@ ___
 
 #### Returns
 
-[`AbstractWebSource`](AbstractWebSource.md)
+[`AbstractWebSource`](AbstractWebSource.md)<`T`, `U`, `V`\>
 
 #### Inherited from
 
@@ -550,7 +515,7 @@ ___
 
 ### removeListener
 
-▸ **removeListener**(`type`, `listener`): [`AbstractWebSource`](AbstractWebSource.md)
+▸ **removeListener**(`type`, `listener`): [`AbstractWebSource`](AbstractWebSource.md)<`T`, `U`, `V`\>
 
 #### Parameters
 
@@ -561,7 +526,7 @@ ___
 
 #### Returns
 
-[`AbstractWebSource`](AbstractWebSource.md)
+[`AbstractWebSource`](AbstractWebSource.md)<`T`, `U`, `V`\>
 
 #### Inherited from
 
@@ -583,13 +548,13 @@ ___
 
 #### Defined in
 
-[src/source/web/AbstractWebSource.ts:35](https://github.com/medialib-project/medialib/blob/0cfc488/src/source/web/AbstractWebSource.ts#L35)
+src/source/web/AbstractWebMediaSource.ts:34
 
 ___
 
 ### setMaxListeners
 
-▸ **setMaxListeners**(`n`): [`AbstractWebSource`](AbstractWebSource.md)
+▸ **setMaxListeners**(`n`): [`AbstractWebSource`](AbstractWebSource.md)<`T`, `U`, `V`\>
 
 #### Parameters
 
@@ -599,7 +564,7 @@ ___
 
 #### Returns
 
-[`AbstractWebSource`](AbstractWebSource.md)
+[`AbstractWebSource`](AbstractWebSource.md)<`T`, `U`, `V`\>
 
 #### Inherited from
 
@@ -619,7 +584,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `settings` | [`sourceSettingsType`](../interfaces/sourceSettingsType.md) |
+| `settings` | `T` |
 
 #### Returns
 
@@ -631,43 +596,7 @@ ___
 
 #### Defined in
 
-[src/source/AbstractMediaSource.ts:46](https://github.com/medialib-project/medialib/blob/0cfc488/src/source/AbstractMediaSource.ts#L46)
-
-___
-
-### getDefaultSettings
-
-▸ `Static` **getDefaultSettings**(): [`sourceSettingsType`](../interfaces/sourceSettingsType.md)
-
-#### Returns
-
-[`sourceSettingsType`](../interfaces/sourceSettingsType.md)
-
-#### Inherited from
-
-[AbstractMediaSource](AbstractMediaSource.md).[getDefaultSettings](AbstractMediaSource.md#getdefaultsettings-1)
-
-#### Defined in
-
-[src/source/AbstractMediaSource.ts:28](https://github.com/medialib-project/medialib/blob/0cfc488/src/source/AbstractMediaSource.ts#L28)
-
-___
-
-### getSettingsDefinition
-
-▸ `Static` **getSettingsDefinition**(): [`sourceSettingsDefinitionType`](../interfaces/sourceSettingsDefinitionType.md)
-
-#### Returns
-
-[`sourceSettingsDefinitionType`](../interfaces/sourceSettingsDefinitionType.md)
-
-#### Inherited from
-
-[AbstractMediaSource](AbstractMediaSource.md).[getSettingsDefinition](AbstractMediaSource.md#getsettingsdefinition-1)
-
-#### Defined in
-
-[src/source/AbstractMediaSource.ts:24](https://github.com/medialib-project/medialib/blob/0cfc488/src/source/AbstractMediaSource.ts#L24)
+[src/source/AbstractMediaSource.ts:35](https://github.com/medialib-project/medialib/blob/3acd8bd/src/source/AbstractMediaSource.ts#L35)
 
 ___
 

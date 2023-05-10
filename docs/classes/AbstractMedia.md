@@ -1,6 +1,12 @@
 [@medialib/medialib](../README.md) / [Exports](../modules.md) / AbstractMedia
 
-# Class: AbstractMedia
+# Class: AbstractMedia<T\>
+
+## Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | extends [`basicMediaDetails`](../modules.md#basicmediadetails) = [`basicMediaDetails`](../modules.md#basicmediadetails) |
 
 ## Table of contents
 
@@ -10,74 +16,54 @@
 
 ### Properties
 
-- [id](AbstractMedia.md#id)
-- [title](AbstractMedia.md#title)
+- [details](AbstractMedia.md#details)
 
 ### Methods
 
-- [getId](AbstractMedia.md#getid)
-- [getTitle](AbstractMedia.md#gettitle)
+- [getDetails](AbstractMedia.md#getdetails)
 
 ## Constructors
 
 ### constructor
 
-• **new AbstractMedia**(`«destructured»`)
+• **new AbstractMedia**<`T`\>(`details`)
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | extends [`basicMediaDetails`](../modules.md#basicmediadetails) = [`basicMediaDetails`](../modules.md#basicmediadetails) |
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `«destructured»` | [`mediaOptions`](../interfaces/mediaOptions.md) |
+| `details` | `T` |
 
 #### Defined in
 
-[src/AbstractMedia.ts:7](https://github.com/medialib-project/medialib/blob/0cfc488/src/AbstractMedia.ts#L7)
+[src/AbstractMedia.ts:6](https://github.com/medialib-project/medialib/blob/3acd8bd/src/AbstractMedia.ts#L6)
 
 ## Properties
 
-### id
+### details
 
-• `Private` **id**: `string`
-
-#### Defined in
-
-[src/AbstractMedia.ts:4](https://github.com/medialib-project/medialib/blob/0cfc488/src/AbstractMedia.ts#L4)
-
-___
-
-### title
-
-• `Private` **title**: `string`
+• `Private` **details**: `T`
 
 #### Defined in
 
-[src/AbstractMedia.ts:5](https://github.com/medialib-project/medialib/blob/0cfc488/src/AbstractMedia.ts#L5)
+[src/AbstractMedia.ts:6](https://github.com/medialib-project/medialib/blob/3acd8bd/src/AbstractMedia.ts#L6)
 
 ## Methods
 
-### getId
+### getDetails
 
-▸ **getId**(): `string`
-
-#### Returns
-
-`string`
-
-#### Defined in
-
-[src/AbstractMedia.ts:12](https://github.com/medialib-project/medialib/blob/0cfc488/src/AbstractMedia.ts#L12)
-
-___
-
-### getTitle
-
-▸ **getTitle**(): `string`
+▸ **getDetails**(): `T`
 
 #### Returns
 
-`string`
+`T`
 
 #### Defined in
 
-[src/AbstractMedia.ts:16](https://github.com/medialib-project/medialib/blob/0cfc488/src/AbstractMedia.ts#L16)
+[src/AbstractMedia.ts:8](https://github.com/medialib-project/medialib/blob/3acd8bd/src/AbstractMedia.ts#L8)

@@ -1,6 +1,16 @@
 [@medialib/medialib](../README.md) / [Exports](../modules.md) / AddonManagerCenter
 
-# Class: AddonManagerCenter
+# Class: AddonManagerCenter<T, V, X\>
+
+**`No Inherit Doc`**
+
+## Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | extends [`basicAddonManagerCenterDetails`](../modules.md#basicaddonmanagercenterdetails) = [`basicAddonManagerCenterDetails`](../modules.md#basicaddonmanagercenterdetails) |
+| `V` | extends [`AbstractAddonManager`](AbstractAddonManager.md) = [`AbstractAddonManager`](AbstractAddonManager.md) |
+| `X` | extends [`AbstractAddon`](AbstractAddon.md) = [`AbstractAddon`](AbstractAddon.md) |
 
 ## Hierarchy
 
@@ -16,6 +26,7 @@
 
 ### Properties
 
+- [details](AddonManagerCenter.md#details)
 - [managers](AddonManagerCenter.md#managers)
 - [defaultMaxListeners](AddonManagerCenter.md#defaultmaxlisteners)
 
@@ -28,6 +39,7 @@
 - [eventNames](AddonManagerCenter.md#eventnames)
 - [getAllManagers](AddonManagerCenter.md#getallmanagers)
 - [getById](AddonManagerCenter.md#getbyid)
+- [getDetails](AddonManagerCenter.md#getdetails)
 - [getManagerByType](AddonManagerCenter.md#getmanagerbytype)
 - [getManagerIndex](AddonManagerCenter.md#getmanagerindex)
 - [getMaxListeners](AddonManagerCenter.md#getmaxlisteners)
@@ -54,13 +66,22 @@
 
 ### constructor
 
-• **new AddonManagerCenter**(`...managers`)
+• **new AddonManagerCenter**<`T`, `V`, `X`\>(`managers`, `details`)
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | extends `Record`<`string`, `unknown`\> = `Record`<`string`, `unknown`\> |
+| `V` | extends [`AbstractAddonManager`](AbstractAddonManager.md)<[`basicAddonManagerDetails`](../modules.md#basicaddonmanagerdetails), [`AbstractAddon`](AbstractAddon.md)<[`basicAddonDetails`](../modules.md#basicaddondetails), `Record`<`string`, `unknown`\>, `Record`<`string`, `unknown`\>\>, `V`\> = [`AbstractAddonManager`](AbstractAddonManager.md)<[`basicAddonManagerDetails`](../modules.md#basicaddonmanagerdetails), [`AbstractAddon`](AbstractAddon.md)<[`basicAddonDetails`](../modules.md#basicaddondetails), `Record`<`string`, `unknown`\>, `Record`<`string`, `unknown`\>\>\> |
+| `X` | extends [`AbstractAddon`](AbstractAddon.md)<[`basicAddonDetails`](../modules.md#basicaddondetails), `Record`<`string`, `unknown`\>, `Record`<`string`, `unknown`\>, `X`\> = [`AbstractAddon`](AbstractAddon.md)<[`basicAddonDetails`](../modules.md#basicaddondetails), `Record`<`string`, `unknown`\>, `Record`<`string`, `unknown`\>\> |
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `...managers` | [`AbstractAddonManager`](AbstractAddonManager.md)[] |
+| `managers` | `V`[] |
+| `details` | `T` |
 
 #### Overrides
 
@@ -68,9 +89,19 @@ EventEmitter.constructor
 
 #### Defined in
 
-node_modules/@addonlib/addonlib/dist/AddonManagerCenter.d.ts:7
+node_modules/@addonlib/addonlib/dist/AddonManagerCenter.d.ts:16
 
 ## Properties
+
+### details
+
+• `Private` **details**: `any`
+
+#### Defined in
+
+node_modules/@addonlib/addonlib/dist/AddonManagerCenter.d.ts:15
+
+___
 
 ### managers
 
@@ -78,7 +109,7 @@ node_modules/@addonlib/addonlib/dist/AddonManagerCenter.d.ts:7
 
 #### Defined in
 
-node_modules/@addonlib/addonlib/dist/AddonManagerCenter.d.ts:6
+node_modules/@addonlib/addonlib/dist/AddonManagerCenter.d.ts:14
 
 ___
 
@@ -104,7 +135,7 @@ node_modules/@types/events/index.d.ts:11
 
 | Name | Type |
 | :------ | :------ |
-| `addon` | [`AbstractAddon`](AbstractAddon.md) |
+| `addon` | `X` |
 
 #### Returns
 
@@ -112,13 +143,13 @@ node_modules/@types/events/index.d.ts:11
 
 #### Defined in
 
-node_modules/@addonlib/addonlib/dist/AddonManagerCenter.d.ts:18
+node_modules/@addonlib/addonlib/dist/AddonManagerCenter.d.ts:28
 
 ___
 
 ### addListener
 
-▸ **addListener**(`type`, `listener`): [`AddonManagerCenter`](AddonManagerCenter.md)
+▸ **addListener**(`type`, `listener`): [`AddonManagerCenter`](AddonManagerCenter.md)<`T`, `V`, `X`\>
 
 #### Parameters
 
@@ -129,7 +160,7 @@ ___
 
 #### Returns
 
-[`AddonManagerCenter`](AddonManagerCenter.md)
+[`AddonManagerCenter`](AddonManagerCenter.md)<`T`, `V`, `X`\>
 
 #### Inherited from
 
@@ -149,7 +180,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `manager` | [`AbstractAddonManager`](AbstractAddonManager.md) |
+| `manager` | `V` |
 
 #### Returns
 
@@ -157,7 +188,7 @@ ___
 
 #### Defined in
 
-node_modules/@addonlib/addonlib/dist/AddonManagerCenter.d.ts:13
+node_modules/@addonlib/addonlib/dist/AddonManagerCenter.d.ts:23
 
 ___
 
@@ -206,21 +237,21 @@ ___
 
 ### getAllManagers
 
-▸ **getAllManagers**(): [`AbstractAddonManager`](AbstractAddonManager.md)[]
+▸ **getAllManagers**(): `V`[]
 
 #### Returns
 
-[`AbstractAddonManager`](AbstractAddonManager.md)[]
+`V`[]
 
 #### Defined in
 
-node_modules/@addonlib/addonlib/dist/AddonManagerCenter.d.ts:8
+node_modules/@addonlib/addonlib/dist/AddonManagerCenter.d.ts:18
 
 ___
 
 ### getById
 
-▸ **getById**(`id`): `undefined` \| [`AbstractAddonManager`](AbstractAddonManager.md)
+▸ **getById**(`id`): `undefined` \| `V`
 
 #### Parameters
 
@@ -230,7 +261,21 @@ ___
 
 #### Returns
 
-`undefined` \| [`AbstractAddonManager`](AbstractAddonManager.md)
+`undefined` \| `V`
+
+#### Defined in
+
+node_modules/@addonlib/addonlib/dist/AddonManagerCenter.d.ts:27
+
+___
+
+### getDetails
+
+▸ **getDetails**(): `T`
+
+#### Returns
+
+`T`
 
 #### Defined in
 
@@ -240,7 +285,7 @@ ___
 
 ### getManagerByType
 
-▸ **getManagerByType**(`type`): `undefined` \| [`AbstractAddonManager`](AbstractAddonManager.md)
+▸ **getManagerByType**(`type`): `undefined` \| `V`
 
 #### Parameters
 
@@ -250,11 +295,11 @@ ___
 
 #### Returns
 
-`undefined` \| [`AbstractAddonManager`](AbstractAddonManager.md)
+`undefined` \| `V`
 
 #### Defined in
 
-node_modules/@addonlib/addonlib/dist/AddonManagerCenter.d.ts:12
+node_modules/@addonlib/addonlib/dist/AddonManagerCenter.d.ts:22
 
 ___
 
@@ -266,7 +311,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `manager` | [`AbstractAddonManager`](AbstractAddonManager.md) |
+| `manager` | `V` |
 
 #### Returns
 
@@ -274,7 +319,7 @@ ___
 
 #### Defined in
 
-node_modules/@addonlib/addonlib/dist/AddonManagerCenter.d.ts:9
+node_modules/@addonlib/addonlib/dist/AddonManagerCenter.d.ts:19
 
 ___
 
@@ -312,7 +357,7 @@ ___
 
 #### Defined in
 
-node_modules/@addonlib/addonlib/dist/AddonManagerCenter.d.ts:16
+node_modules/@addonlib/addonlib/dist/AddonManagerCenter.d.ts:26
 
 ___
 
@@ -324,7 +369,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `addon` | [`AbstractAddon`](AbstractAddon.md) |
+| `addon` | `X` |
 
 #### Returns
 
@@ -332,7 +377,7 @@ ___
 
 #### Defined in
 
-node_modules/@addonlib/addonlib/dist/AddonManagerCenter.d.ts:15
+node_modules/@addonlib/addonlib/dist/AddonManagerCenter.d.ts:25
 
 ___
 
@@ -344,7 +389,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `manager` | [`AbstractAddonManager`](AbstractAddonManager.md) |
+| `manager` | `V` |
 
 #### Returns
 
@@ -352,7 +397,7 @@ ___
 
 #### Defined in
 
-node_modules/@addonlib/addonlib/dist/AddonManagerCenter.d.ts:10
+node_modules/@addonlib/addonlib/dist/AddonManagerCenter.d.ts:20
 
 ___
 
@@ -372,7 +417,7 @@ ___
 
 #### Defined in
 
-node_modules/@addonlib/addonlib/dist/AddonManagerCenter.d.ts:11
+node_modules/@addonlib/addonlib/dist/AddonManagerCenter.d.ts:21
 
 ___
 
@@ -426,7 +471,7 @@ ___
 
 ### off
 
-▸ **off**(`type`, `listener`): [`AddonManagerCenter`](AddonManagerCenter.md)
+▸ **off**(`type`, `listener`): [`AddonManagerCenter`](AddonManagerCenter.md)<`T`, `V`, `X`\>
 
 #### Parameters
 
@@ -437,7 +482,7 @@ ___
 
 #### Returns
 
-[`AddonManagerCenter`](AddonManagerCenter.md)
+[`AddonManagerCenter`](AddonManagerCenter.md)<`T`, `V`, `X`\>
 
 #### Inherited from
 
@@ -451,7 +496,7 @@ ___
 
 ### on
 
-▸ **on**(`type`, `listener`): [`AddonManagerCenter`](AddonManagerCenter.md)
+▸ **on**(`type`, `listener`): [`AddonManagerCenter`](AddonManagerCenter.md)<`T`, `V`, `X`\>
 
 #### Parameters
 
@@ -462,7 +507,7 @@ ___
 
 #### Returns
 
-[`AddonManagerCenter`](AddonManagerCenter.md)
+[`AddonManagerCenter`](AddonManagerCenter.md)<`T`, `V`, `X`\>
 
 #### Inherited from
 
@@ -476,7 +521,7 @@ ___
 
 ### once
 
-▸ **once**(`type`, `listener`): [`AddonManagerCenter`](AddonManagerCenter.md)
+▸ **once**(`type`, `listener`): [`AddonManagerCenter`](AddonManagerCenter.md)<`T`, `V`, `X`\>
 
 #### Parameters
 
@@ -487,7 +532,7 @@ ___
 
 #### Returns
 
-[`AddonManagerCenter`](AddonManagerCenter.md)
+[`AddonManagerCenter`](AddonManagerCenter.md)<`T`, `V`, `X`\>
 
 #### Inherited from
 
@@ -501,7 +546,7 @@ ___
 
 ### prependListener
 
-▸ **prependListener**(`type`, `listener`): [`AddonManagerCenter`](AddonManagerCenter.md)
+▸ **prependListener**(`type`, `listener`): [`AddonManagerCenter`](AddonManagerCenter.md)<`T`, `V`, `X`\>
 
 #### Parameters
 
@@ -512,7 +557,7 @@ ___
 
 #### Returns
 
-[`AddonManagerCenter`](AddonManagerCenter.md)
+[`AddonManagerCenter`](AddonManagerCenter.md)<`T`, `V`, `X`\>
 
 #### Inherited from
 
@@ -526,7 +571,7 @@ ___
 
 ### prependOnceListener
 
-▸ **prependOnceListener**(`type`, `listener`): [`AddonManagerCenter`](AddonManagerCenter.md)
+▸ **prependOnceListener**(`type`, `listener`): [`AddonManagerCenter`](AddonManagerCenter.md)<`T`, `V`, `X`\>
 
 #### Parameters
 
@@ -537,7 +582,7 @@ ___
 
 #### Returns
 
-[`AddonManagerCenter`](AddonManagerCenter.md)
+[`AddonManagerCenter`](AddonManagerCenter.md)<`T`, `V`, `X`\>
 
 #### Inherited from
 
@@ -581,7 +626,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `addon` | [`AbstractAddon`](AbstractAddon.md) |
+| `addon` | `X` |
 
 #### Returns
 
@@ -589,13 +634,13 @@ ___
 
 #### Defined in
 
-node_modules/@addonlib/addonlib/dist/AddonManagerCenter.d.ts:19
+node_modules/@addonlib/addonlib/dist/AddonManagerCenter.d.ts:29
 
 ___
 
 ### removeAllListeners
 
-▸ **removeAllListeners**(`type?`): [`AddonManagerCenter`](AddonManagerCenter.md)
+▸ **removeAllListeners**(`type?`): [`AddonManagerCenter`](AddonManagerCenter.md)<`T`, `V`, `X`\>
 
 #### Parameters
 
@@ -605,7 +650,7 @@ ___
 
 #### Returns
 
-[`AddonManagerCenter`](AddonManagerCenter.md)
+[`AddonManagerCenter`](AddonManagerCenter.md)<`T`, `V`, `X`\>
 
 #### Inherited from
 
@@ -619,7 +664,7 @@ ___
 
 ### removeListener
 
-▸ **removeListener**(`type`, `listener`): [`AddonManagerCenter`](AddonManagerCenter.md)
+▸ **removeListener**(`type`, `listener`): [`AddonManagerCenter`](AddonManagerCenter.md)<`T`, `V`, `X`\>
 
 #### Parameters
 
@@ -630,7 +675,7 @@ ___
 
 #### Returns
 
-[`AddonManagerCenter`](AddonManagerCenter.md)
+[`AddonManagerCenter`](AddonManagerCenter.md)<`T`, `V`, `X`\>
 
 #### Inherited from
 
@@ -644,27 +689,27 @@ ___
 
 ### removeManager
 
-▸ **removeManager**(`manager`): ``false`` \| [`AbstractAddonManager`](AbstractAddonManager.md)[]
+▸ **removeManager**(`manager`): ``false`` \| `V`[]
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `manager` | [`AbstractAddonManager`](AbstractAddonManager.md) |
+| `manager` | `V` |
 
 #### Returns
 
-``false`` \| [`AbstractAddonManager`](AbstractAddonManager.md)[]
+``false`` \| `V`[]
 
 #### Defined in
 
-node_modules/@addonlib/addonlib/dist/AddonManagerCenter.d.ts:14
+node_modules/@addonlib/addonlib/dist/AddonManagerCenter.d.ts:24
 
 ___
 
 ### setMaxListeners
 
-▸ **setMaxListeners**(`n`): [`AddonManagerCenter`](AddonManagerCenter.md)
+▸ **setMaxListeners**(`n`): [`AddonManagerCenter`](AddonManagerCenter.md)<`T`, `V`, `X`\>
 
 #### Parameters
 
@@ -674,7 +719,7 @@ ___
 
 #### Returns
 
-[`AddonManagerCenter`](AddonManagerCenter.md)
+[`AddonManagerCenter`](AddonManagerCenter.md)<`T`, `V`, `X`\>
 
 #### Inherited from
 
