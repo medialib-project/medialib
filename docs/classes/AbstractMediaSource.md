@@ -80,7 +80,7 @@ EventEmitter.constructor
 
 #### Defined in
 
-[src/source/AbstractMediaSource.ts:19](https://github.com/medialib-project/medialib/blob/3acd8bd/src/source/AbstractMediaSource.ts#L19)
+[src/source/AbstractMediaSource.ts:19](https://github.com/medialib-project/medialib/blob/d187830/src/source/AbstractMediaSource.ts#L19)
 
 ## Properties
 
@@ -90,7 +90,7 @@ EventEmitter.constructor
 
 #### Defined in
 
-[src/source/AbstractMediaSource.ts:17](https://github.com/medialib-project/medialib/blob/3acd8bd/src/source/AbstractMediaSource.ts#L17)
+[src/source/AbstractMediaSource.ts:17](https://github.com/medialib-project/medialib/blob/d187830/src/source/AbstractMediaSource.ts#L17)
 
 ___
 
@@ -100,7 +100,7 @@ ___
 
 #### Defined in
 
-[src/source/AbstractMediaSource.ts:16](https://github.com/medialib-project/medialib/blob/3acd8bd/src/source/AbstractMediaSource.ts#L16)
+[src/source/AbstractMediaSource.ts:16](https://github.com/medialib-project/medialib/blob/d187830/src/source/AbstractMediaSource.ts#L16)
 
 ___
 
@@ -202,7 +202,7 @@ ___
 
 #### Defined in
 
-[src/source/AbstractMediaSource.ts:41](https://github.com/medialib-project/medialib/blob/3acd8bd/src/source/AbstractMediaSource.ts#L41)
+[src/source/AbstractMediaSource.ts:40](https://github.com/medialib-project/medialib/blob/d187830/src/source/AbstractMediaSource.ts#L40)
 
 ___
 
@@ -216,7 +216,7 @@ ___
 
 #### Defined in
 
-[src/source/AbstractMediaSource.ts:43](https://github.com/medialib-project/medialib/blob/3acd8bd/src/source/AbstractMediaSource.ts#L43)
+[src/source/AbstractMediaSource.ts:42](https://github.com/medialib-project/medialib/blob/d187830/src/source/AbstractMediaSource.ts#L42)
 
 ___
 
@@ -248,7 +248,7 @@ ___
 
 #### Defined in
 
-[src/source/AbstractMediaSource.ts:31](https://github.com/medialib-project/medialib/blob/3acd8bd/src/source/AbstractMediaSource.ts#L31)
+[src/source/AbstractMediaSource.ts:30](https://github.com/medialib-project/medialib/blob/d187830/src/source/AbstractMediaSource.ts#L30)
 
 ___
 
@@ -262,7 +262,7 @@ ___
 
 #### Defined in
 
-[src/source/AbstractMediaSource.ts:27](https://github.com/medialib-project/medialib/blob/3acd8bd/src/source/AbstractMediaSource.ts#L27)
+[src/source/AbstractMediaSource.ts:26](https://github.com/medialib-project/medialib/blob/d187830/src/source/AbstractMediaSource.ts#L26)
 
 ___
 
@@ -552,7 +552,7 @@ ___
 
 #### Defined in
 
-[src/source/AbstractMediaSource.ts:35](https://github.com/medialib-project/medialib/blob/3acd8bd/src/source/AbstractMediaSource.ts#L35)
+[src/source/AbstractMediaSource.ts:34](https://github.com/medialib-project/medialib/blob/d187830/src/source/AbstractMediaSource.ts#L34)
 
 ___
 

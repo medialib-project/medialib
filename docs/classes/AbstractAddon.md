@@ -94,7 +94,7 @@ EventEmitter.constructor
 
 #### Defined in
 
-node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:21
+node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:13
 
 ## Properties
 
@@ -104,7 +104,7 @@ node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:21
 
 #### Defined in
 
-node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:18
+node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:10
 
 ___
 
@@ -114,7 +114,7 @@ ___
 
 #### Defined in
 
-node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:17
+node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:9
 
 ___
 
@@ -124,7 +124,7 @@ ___
 
 #### Defined in
 
-node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:19
+node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:11
 
 ___
 
@@ -134,7 +134,7 @@ ___
 
 #### Defined in
 
-node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:20
+node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:12
 
 ___
 
@@ -218,7 +218,7 @@ ___
 
 #### Defined in
 
-node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:38
+node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:26
 
 ___
 
@@ -250,7 +250,7 @@ ___
 
 #### Defined in
 
-node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:26
+node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:14
 
 ___
 
@@ -282,7 +282,7 @@ ___
 
 #### Defined in
 
-node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:27
+node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:15
 
 ___
 
@@ -296,7 +296,7 @@ ___
 
 #### Defined in
 
-node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:29
+node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:17
 
 ___
 
@@ -310,7 +310,7 @@ ___
 
 #### Defined in
 
-node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:28
+node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:16
 
 ___
 
@@ -378,7 +378,7 @@ ___
 
 #### Defined in
 
-node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:36
+node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:24
 
 ___
 
@@ -442,7 +442,7 @@ ___
 
 #### Defined in
 
-node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:31
+node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:19
 
 ___
 
@@ -456,7 +456,7 @@ ___
 
 #### Defined in
 
-node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:33
+node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:21
 
 ___
 
@@ -470,7 +470,7 @@ ___
 
 #### Defined in
 
-node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:35
+node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:23
 
 ___
 
@@ -484,7 +484,7 @@ ___
 
 #### Defined in
 
-node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:34
+node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:22
 
 ___
 
@@ -504,7 +504,7 @@ ___
 
 #### Defined in
 
-node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:32
+node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:20
 
 ___
 
@@ -696,7 +696,7 @@ ___
 
 #### Defined in
 
-node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:30
+node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:18
 
 ___
 
@@ -716,7 +716,7 @@ ___
 
 #### Defined in
 
-node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:37
+node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:25
 
 ___
 

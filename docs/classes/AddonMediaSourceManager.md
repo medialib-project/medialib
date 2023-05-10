@@ -83,7 +83,7 @@ Only accepts Addons that are of the same type
 
 #### Defined in
 
-src/source/MediaSourceAddonManager.ts:9
+[src/source/MediaSourceAddonManager.ts:9](https://github.com/medialib-project/medialib/blob/d187830/src/source/MediaSourceAddonManager.ts#L9)
 
 ## Properties
 
@@ -121,7 +121,7 @@ node_modules/@types/events/index.d.ts:11
 
 #### Defined in
 
-node_modules/@addonlib/addonlib/dist/AbstractAddonManager.d.ts:22
+node_modules/@addonlib/addonlib/dist/AbstractAddonManager.d.ts:19
 
 ___
 
@@ -207,7 +207,7 @@ ___
 
 #### Defined in
 
-node_modules/@addonlib/addonlib/dist/AbstractAddonManager.d.ts:17
+node_modules/@addonlib/addonlib/dist/AbstractAddonManager.d.ts:14
 
 ___
 
@@ -231,7 +231,7 @@ ___
 
 #### Defined in
 
-node_modules/@addonlib/addonlib/dist/AbstractAddonManager.d.ts:20
+node_modules/@addonlib/addonlib/dist/AbstractAddonManager.d.ts:17
 
 ___
 
@@ -249,7 +249,7 @@ ___
 
 #### Defined in
 
-node_modules/@addonlib/addonlib/dist/AbstractAddonManager.d.ts:16
+node_modules/@addonlib/addonlib/dist/AbstractAddonManager.d.ts:13
 
 ___
 
@@ -273,7 +273,7 @@ ___
 
 #### Defined in
 
-node_modules/@addonlib/addonlib/dist/AbstractAddonManager.d.ts:19
+node_modules/@addonlib/addonlib/dist/AbstractAddonManager.d.ts:16
 
 ___
 
@@ -315,7 +315,7 @@ ___
 
 #### Defined in
 
-node_modules/@addonlib/addonlib/dist/AbstractAddonManager.d.ts:21
+node_modules/@addonlib/addonlib/dist/AbstractAddonManager.d.ts:18
 
 ___
 
@@ -339,7 +339,7 @@ ___
 
 #### Defined in
 
-node_modules/@addonlib/addonlib/dist/AbstractAddonManager.d.ts:18
+node_modules/@addonlib/addonlib/dist/AbstractAddonManager.d.ts:15
 
 ___
 
@@ -560,7 +560,7 @@ ___
 
 #### Defined in
 
-node_modules/@addonlib/addonlib/dist/AbstractAddonManager.d.ts:23
+node_modules/@addonlib/addonlib/dist/AbstractAddonManager.d.ts:20
 
 ___
 
@@ -637,7 +637,7 @@ set the addon list without any check
 
 #### Defined in
 
-node_modules/@addonlib/addonlib/dist/AbstractAddonManager.d.ts:28
+node_modules/@addonlib/addonlib/dist/AbstractAddonManager.d.ts:25
 
 ___
 

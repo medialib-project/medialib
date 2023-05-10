@@ -92,7 +92,7 @@
 
 #### Defined in
 
-[src/source/AbstractMediaSourceAddon.ts:17](https://github.com/medialib-project/medialib/blob/3acd8bd/src/source/AbstractMediaSourceAddon.ts#L17)
+[src/source/AbstractMediaSourceAddon.ts:17](https://github.com/medialib-project/medialib/blob/d187830/src/source/AbstractMediaSourceAddon.ts#L17)
 
 ## Properties
 
@@ -102,7 +102,7 @@
 
 #### Defined in
 
-[src/source/AbstractMediaSourceAddon.ts:15](https://github.com/medialib-project/medialib/blob/3acd8bd/src/source/AbstractMediaSourceAddon.ts#L15)
+[src/source/AbstractMediaSourceAddon.ts:15](https://github.com/medialib-project/medialib/blob/d187830/src/source/AbstractMediaSourceAddon.ts#L15)
 
 ___
 
@@ -190,7 +190,7 @@ ___
 
 #### Defined in
 
-node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:38
+node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:26
 
 ___
 
@@ -226,7 +226,7 @@ ___
 
 #### Defined in
 
-node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:26
+node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:14
 
 ___
 
@@ -262,7 +262,7 @@ ___
 
 #### Defined in
 
-node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:27
+node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:15
 
 ___
 
@@ -280,7 +280,7 @@ ___
 
 #### Defined in
 
-[src/source/AbstractMediaSourceAddon.ts:29](https://github.com/medialib-project/medialib/blob/3acd8bd/src/source/AbstractMediaSourceAddon.ts#L29)
+[src/source/AbstractMediaSourceAddon.ts:29](https://github.com/medialib-project/medialib/blob/d187830/src/source/AbstractMediaSourceAddon.ts#L29)
 
 ___
 
@@ -298,7 +298,7 @@ ___
 
 #### Defined in
 
-[src/source/AbstractMediaSourceAddon.ts:37](https://github.com/medialib-project/medialib/blob/3acd8bd/src/source/AbstractMediaSourceAddon.ts#L37)
+[src/source/AbstractMediaSourceAddon.ts:37](https://github.com/medialib-project/medialib/blob/d187830/src/source/AbstractMediaSourceAddon.ts#L37)
 
 ___
 
@@ -312,7 +312,7 @@ ___
 
 #### Defined in
 
-[src/source/AbstractMediaSourceAddon.ts:25](https://github.com/medialib-project/medialib/blob/3acd8bd/src/source/AbstractMediaSourceAddon.ts#L25)
+[src/source/AbstractMediaSourceAddon.ts:25](https://github.com/medialib-project/medialib/blob/d187830/src/source/AbstractMediaSourceAddon.ts#L25)
 
 ___
 
@@ -384,7 +384,7 @@ ___
 
 #### Defined in
 
-node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:36
+node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:24
 
 ___
 
@@ -452,7 +452,7 @@ ___
 
 #### Defined in
 
-node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:31
+node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:19
 
 ___
 
@@ -470,7 +470,7 @@ ___
 
 #### Defined in
 
-node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:33
+node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:21
 
 ___
 
@@ -488,7 +488,7 @@ ___
 
 #### Defined in
 
-node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:35
+node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:23
 
 ___
 
@@ -506,7 +506,7 @@ ___
 
 #### Defined in
 
-node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:34
+node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:22
 
 ___
 
@@ -530,7 +530,7 @@ ___
 
 #### Defined in
 
-node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:32
+node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:20
 
 ___
 
@@ -726,7 +726,7 @@ ___
 
 #### Defined in
 
-[src/source/AbstractMediaSourceAddon.ts:33](https://github.com/medialib-project/medialib/blob/3acd8bd/src/source/AbstractMediaSourceAddon.ts#L33)
+[src/source/AbstractMediaSourceAddon.ts:33](https://github.com/medialib-project/medialib/blob/d187830/src/source/AbstractMediaSourceAddon.ts#L33)
 
 ___
 
@@ -750,7 +750,7 @@ ___
 
 #### Defined in
 
-node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:37
+node_modules/@addonlib/addonlib/dist/AbstractAddon.d.ts:25
 
 ___
 

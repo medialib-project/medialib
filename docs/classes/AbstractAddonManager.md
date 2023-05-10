@@ -87,7 +87,7 @@ EventEmitter.constructor
 
 #### Defined in
 
-node_modules/@addonlib/addonlib/dist/AbstractAddonManager.d.ts:15
+node_modules/@addonlib/addonlib/dist/AbstractAddonManager.d.ts:12
 
 ## Properties
 
@@ -97,7 +97,7 @@ node_modules/@addonlib/addonlib/dist/AbstractAddonManager.d.ts:15
 
 #### Defined in
 
-node_modules/@addonlib/addonlib/dist/AbstractAddonManager.d.ts:13
+node_modules/@addonlib/addonlib/dist/AbstractAddonManager.d.ts:10
 
 ___
 
@@ -107,7 +107,7 @@ ___
 
 #### Defined in
 
-node_modules/@addonlib/addonlib/dist/AbstractAddonManager.d.ts:14
+node_modules/@addonlib/addonlib/dist/AbstractAddonManager.d.ts:11
 
 ___
 
@@ -141,7 +141,7 @@ node_modules/@types/events/index.d.ts:11
 
 #### Defined in
 
-node_modules/@addonlib/addonlib/dist/AbstractAddonManager.d.ts:22
+node_modules/@addonlib/addonlib/dist/AbstractAddonManager.d.ts:19
 
 ___
 
@@ -223,7 +223,7 @@ ___
 
 #### Defined in
 
-node_modules/@addonlib/addonlib/dist/AbstractAddonManager.d.ts:17
+node_modules/@addonlib/addonlib/dist/AbstractAddonManager.d.ts:14
 
 ___
 
@@ -243,7 +243,7 @@ ___
 
 #### Defined in
 
-node_modules/@addonlib/addonlib/dist/AbstractAddonManager.d.ts:20
+node_modules/@addonlib/addonlib/dist/AbstractAddonManager.d.ts:17
 
 ___
 
@@ -257,7 +257,7 @@ ___
 
 #### Defined in
 
-node_modules/@addonlib/addonlib/dist/AbstractAddonManager.d.ts:16
+node_modules/@addonlib/addonlib/dist/AbstractAddonManager.d.ts:13
 
 ___
 
@@ -277,7 +277,7 @@ ___
 
 #### Defined in
 
-node_modules/@addonlib/addonlib/dist/AbstractAddonManager.d.ts:19
+node_modules/@addonlib/addonlib/dist/AbstractAddonManager.d.ts:16
 
 ___
 
@@ -315,7 +315,7 @@ ___
 
 #### Defined in
 
-node_modules/@addonlib/addonlib/dist/AbstractAddonManager.d.ts:21
+node_modules/@addonlib/addonlib/dist/AbstractAddonManager.d.ts:18
 
 ___
 
@@ -335,7 +335,7 @@ ___
 
 #### Defined in
 
-node_modules/@addonlib/addonlib/dist/AbstractAddonManager.d.ts:18
+node_modules/@addonlib/addonlib/dist/AbstractAddonManager.d.ts:15
 
 ___
 
@@ -552,7 +552,7 @@ ___
 
 #### Defined in
 
-node_modules/@addonlib/addonlib/dist/AbstractAddonManager.d.ts:23
+node_modules/@addonlib/addonlib/dist/AbstractAddonManager.d.ts:20
 
 ___
 
@@ -625,7 +625,7 @@ set the addon list without any check
 
 #### Defined in
 
-node_modules/@addonlib/addonlib/dist/AbstractAddonManager.d.ts:28
+node_modules/@addonlib/addonlib/dist/AbstractAddonManager.d.ts:25
 
 ___
 

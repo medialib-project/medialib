@@ -42,7 +42,7 @@
 
 #### Defined in
 
-[src/AbstractMedia.ts:6](https://github.com/medialib-project/medialib/blob/3acd8bd/src/AbstractMedia.ts#L6)
+[src/AbstractMedia.ts:6](https://github.com/medialib-project/medialib/blob/d187830/src/AbstractMedia.ts#L6)
 
 ## Properties
 
@@ -52,7 +52,7 @@
 
 #### Defined in
 
-[src/AbstractMedia.ts:6](https://github.com/medialib-project/medialib/blob/3acd8bd/src/AbstractMedia.ts#L6)
+[src/AbstractMedia.ts:6](https://github.com/medialib-project/medialib/blob/d187830/src/AbstractMedia.ts#L6)
 
 ## Methods
 
@@ -66,4 +66,4 @@
 
 #### Defined in
 
-[src/AbstractMedia.ts:8](https://github.com/medialib-project/medialib/blob/3acd8bd/src/AbstractMedia.ts#L8)
+[src/AbstractMedia.ts:8](https://github.com/medialib-project/medialib/blob/d187830/src/AbstractMedia.ts#L8)

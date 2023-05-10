@@ -14,14 +14,13 @@ export default abstract class AbstractMediaSource<
   V extends mediaSourceFetchResult = mediaSourceFetchResult
 > extends EventEmitter {
   private settingsDefinition!: optionDefinition<T>;
-  private settings: T;
+  private settings!: T;
 
   public constructor(settingsDefinition?: optionDefinition<T>) {
     super();
     this.settingsDefinition = settingsDefinition as optionDefinition<T>;
-    this.settings = optionUtils.optionDefinitionToOption(
-      this.settingsDefinition
-    );
+    this.settings = (settingsDefinition &&
+      optionUtils.optionDefinitionToOption(this.settingsDefinition)) as T;
   }
 
   public getSettingsDefinition(): optionDefinition<T> {
