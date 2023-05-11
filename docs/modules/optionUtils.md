@@ -14,6 +14,18 @@
 
 ▸ **optionDefinitionToOption**<`T`\>(`definition`): `T`
 
+Get valid options from optionDefinition variable
+
+**`Example`**
+
+```ts
+optionDefinitionToOption({myOption: {type: "string", defaultValue: "a"}})
+```
+returns
+```
+{myOption: "a"}
+```
+
 #### Type parameters
 
 | Name | Type |
@@ -32,4 +44,4 @@
 
 #### Defined in
 
-node_modules/@addonlib/addonlib/dist/utils/optionUtils.d.ts:2
+node_modules/@addonlib/addonlib/dist/utils/optionUtils.d.ts:18

@@ -7,6 +7,9 @@ import {
   webMediaSourceSettings,
 } from './webMediaSourceTypes';
 
+/**
+ * Source that fetch online medias depending on settings and options
+ */
 export default abstract class AbstractWebMediaSource<
   T extends webMediaSourceSettings = webMediaSourceSettings,
   U extends webMediaSourceFetchOption = webMediaSourceFetchOption,

@@ -6,7 +6,7 @@ export default class MediaSourceAddonManager<
   T extends mediaSourceAddonManagerDetails = mediaSourceAddonManagerDetails,
   V extends AbstractMediaSourceAddon = AbstractMediaSourceAddon
 > extends AbstractAddonManager<T, V> {
-  constructor(sourcesAddons: Array<V>, details?: T) {
-    super(sourcesAddons, { ...{ type: 'media-source' }, ...details } as T);
+  constructor(details?: T) {
+    super({ ...{ type: 'media-source' }, ...details } as T);
   }
 }

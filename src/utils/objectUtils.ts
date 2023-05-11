@@ -1,3 +1,10 @@
+/**
+ * Return the value of the first preference key found in the object.
+ *
+ * @param object
+ * @param preferences
+ * @returns
+ */
 export function getValueFromKeysWithPreferencesOrFirst(
   object: any,
   preferences: Array<string>

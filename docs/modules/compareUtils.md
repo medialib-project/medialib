@@ -14,6 +14,8 @@
 
 ▸ **compareChanges**(`object1`, `object2`): [`diffType`](../modules.md#difftype)
 
+Compare two objects and redurn the result of the comparison.
+
 #### Parameters
 
 | Name | Type |
@@ -27,4 +29,4 @@
 
 #### Defined in
 
-[src/utils/compareUtils.ts:4](https://github.com/medialib-project/medialib/blob/d187830/src/utils/compareUtils.ts#L4)
+[src/utils/compareUtils.ts:11](https://github.com/medialib-project/medialib/blob/23e7a19/src/utils/compareUtils.ts#L11)

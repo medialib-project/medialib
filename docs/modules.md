@@ -54,7 +54,7 @@
 
 #### Defined in
 
-node_modules/@addonlib/addonlib/dist/addonTypes.d.ts:12
+node_modules/@addonlib/addonlib/dist/addonTypes.d.ts:15
 
 ___
 
@@ -62,9 +62,11 @@ ___
 
 Ƭ **basicAddonDetails**: { `apiVersion`: `string` ; `authors`: `string`[] ; `dependencies`: `string`[] ; `description`: `string` ; `id`: `string` ; `tags`: `string`[] ; `title`: `string` ; `type`: [`addonType`](modules.md#addontype) ; `version`: `string`  } & `Record`<`string`, `unknown`\>
 
+Basic details that every addon is expected to have.
+
 #### Defined in
 
-node_modules/@addonlib/addonlib/dist/addonTypes.d.ts:1
+node_modules/@addonlib/addonlib/dist/addonTypes.d.ts:4
 
 ___
 
@@ -82,9 +84,15 @@ ___
 
 Ƭ **basicAddonManagerDetails**: { `type`: [`addonType`](modules.md#addontype)  } & `Record`<`string`, `unknown`\>
 
+Basic details that every addon manager is expected to have.
+
+**`Param`**
+
+correspond to the type of addons the manager accept.
+
 #### Defined in
 
-node_modules/@addonlib/addonlib/dist/addonManagerTypes.d.ts:2
+node_modules/@addonlib/addonlib/dist/addonManagerTypes.d.ts:7
 
 ___
 
@@ -92,9 +100,11 @@ ___
 
 Ƭ **basicAddonResources**: {} & `Record`<`string`, `unknown`\>
 
+Basic resources that every addon is expected to have.
+
 #### Defined in
 
-node_modules/@addonlib/addonlib/dist/addonTypes.d.ts:13
+node_modules/@addonlib/addonlib/dist/addonTypes.d.ts:19
 
 ___
 
@@ -102,9 +112,11 @@ ___
 
 Ƭ **basicAddonSettings**: {} & `Record`<`string`, `unknown`\>
 
+Basic settings that every addon is expected to have
+
 #### Defined in
 
-node_modules/@addonlib/addonlib/dist/addonTypes.d.ts:14
+node_modules/@addonlib/addonlib/dist/addonTypes.d.ts:23
 
 ___
 
@@ -114,7 +126,7 @@ ___
 
 #### Defined in
 
-[src/mediaTypes.ts:1](https://github.com/medialib-project/medialib/blob/d187830/src/mediaTypes.ts#L1)
+[src/mediaTypes.ts:1](https://github.com/medialib-project/medialib/blob/23e7a19/src/mediaTypes.ts#L1)
 
 ___
 
@@ -131,7 +143,7 @@ ___
 
 #### Defined in
 
-[src/utils/diffType.ts:1](https://github.com/medialib-project/medialib/blob/d187830/src/utils/diffType.ts#L1)
+[src/utils/diffType.ts:1](https://github.com/medialib-project/medialib/blob/23e7a19/src/utils/diffType.ts#L1)
 
 ___
 
@@ -145,7 +157,7 @@ ___
 
 #### Defined in
 
-[src/utils/diffType.ts:3](https://github.com/medialib-project/medialib/blob/d187830/src/utils/diffType.ts#L3)
+[src/utils/diffType.ts:3](https://github.com/medialib-project/medialib/blob/23e7a19/src/utils/diffType.ts#L3)
 
 ___
 
@@ -155,7 +167,7 @@ ___
 
 #### Defined in
 
-[src/source/mediaSourceAddonTypes.ts:7](https://github.com/medialib-project/medialib/blob/d187830/src/source/mediaSourceAddonTypes.ts#L7)
+[src/source/mediaSourceAddonTypes.ts:7](https://github.com/medialib-project/medialib/blob/23e7a19/src/source/mediaSourceAddonTypes.ts#L7)
 
 ___
 
@@ -165,7 +177,7 @@ ___
 
 #### Defined in
 
-[src/source/mediaSourceAddonManagerTypes.ts:3](https://github.com/medialib-project/medialib/blob/d187830/src/source/mediaSourceAddonManagerTypes.ts#L3)
+[src/source/mediaSourceAddonManagerTypes.ts:3](https://github.com/medialib-project/medialib/blob/23e7a19/src/source/mediaSourceAddonManagerTypes.ts#L3)
 
 ___
 
@@ -175,7 +187,7 @@ ___
 
 #### Defined in
 
-[src/source/mediaSourceAddonTypes.ts:11](https://github.com/medialib-project/medialib/blob/d187830/src/source/mediaSourceAddonTypes.ts#L11)
+[src/source/mediaSourceAddonTypes.ts:11](https://github.com/medialib-project/medialib/blob/23e7a19/src/source/mediaSourceAddonTypes.ts#L11)
 
 ___
 
@@ -185,7 +197,7 @@ ___
 
 #### Defined in
 
-[src/source/mediaSourceAddonTypes.ts:13](https://github.com/medialib-project/medialib/blob/d187830/src/source/mediaSourceAddonTypes.ts#L13)
+[src/source/mediaSourceAddonTypes.ts:13](https://github.com/medialib-project/medialib/blob/23e7a19/src/source/mediaSourceAddonTypes.ts#L13)
 
 ___
 
@@ -195,7 +207,7 @@ ___
 
 #### Defined in
 
-[src/source/mediaSourceTypes.ts:5](https://github.com/medialib-project/medialib/blob/d187830/src/source/mediaSourceTypes.ts#L5)
+[src/source/mediaSourceTypes.ts:5](https://github.com/medialib-project/medialib/blob/23e7a19/src/source/mediaSourceTypes.ts#L5)
 
 ___
 
@@ -211,7 +223,7 @@ ___
 
 #### Defined in
 
-[src/source/mediaSourceTypes.ts:7](https://github.com/medialib-project/medialib/blob/d187830/src/source/mediaSourceTypes.ts#L7)
+[src/source/mediaSourceTypes.ts:7](https://github.com/medialib-project/medialib/blob/23e7a19/src/source/mediaSourceTypes.ts#L7)
 
 ___
 
@@ -221,13 +233,46 @@ ___
 
 #### Defined in
 
-[src/source/mediaSourceTypes.ts:3](https://github.com/medialib-project/medialib/blob/d187830/src/source/mediaSourceTypes.ts#L3)
+[src/source/mediaSourceTypes.ts:3](https://github.com/medialib-project/medialib/blob/23e7a19/src/source/mediaSourceTypes.ts#L3)
 
 ___
 
 ### optionDefinition
 
 Ƭ **optionDefinition**<`T`\>: { [K in keyof T]: Object }
+
+Give information on options type. (specially useful to on runtime)
+
+**`Example`**
+
+```ts
+type customOption = {
+ fieldA: boolean,
+ fieldB: string
+}
+
+type customOptionDefinition = optionDefinition<customOption>
+
+const customOptionsEx: customOption = {
+ fieldA: true,
+ fieldB: "abcd"
+}
+
+const customOptionsDefinitionEx: customOptionDefinition = {
+ fieldA: {
+   type: "boolean",
+   label: "A field",
+   defaultValue: false,
+   required: true
+ },
+ fieldB: {
+   type: "string",
+   label: "B field",
+   defaultValue: "",
+   required: false
+ },
+}
+```
 
 #### Type parameters
 
@@ -237,7 +282,7 @@ ___
 
 #### Defined in
 
-node_modules/@addonlib/addonlib/dist/optionTypes.d.ts:1
+node_modules/@addonlib/addonlib/dist/optionTypes.d.ts:34
 
 ___
 
@@ -247,7 +292,7 @@ ___
 
 #### Defined in
 
-[src/source/web/webMediaSourceTypes.ts:13](https://github.com/medialib-project/medialib/blob/d187830/src/source/web/webMediaSourceTypes.ts#L13)
+[src/source/web/webMediaSourceTypes.ts:13](https://github.com/medialib-project/medialib/blob/23e7a19/src/source/web/webMediaSourceTypes.ts#L13)
 
 ___
 
@@ -263,7 +308,7 @@ ___
 
 #### Defined in
 
-[src/source/web/webMediaSourceTypes.ts:18](https://github.com/medialib-project/medialib/blob/d187830/src/source/web/webMediaSourceTypes.ts#L18)
+[src/source/web/webMediaSourceTypes.ts:18](https://github.com/medialib-project/medialib/blob/23e7a19/src/source/web/webMediaSourceTypes.ts#L18)
 
 ___
 
@@ -273,4 +318,4 @@ ___
 
 #### Defined in
 
-[src/source/web/webMediaSourceTypes.ts:8](https://github.com/medialib-project/medialib/blob/d187830/src/source/web/webMediaSourceTypes.ts#L8)
+[src/source/web/webMediaSourceTypes.ts:8](https://github.com/medialib-project/medialib/blob/23e7a19/src/source/web/webMediaSourceTypes.ts#L8)

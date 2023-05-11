@@ -14,6 +14,8 @@
 
 ▸ **chainPromisesOnArray**<`T`, `V`\>(`array`, `promise`, `initialValue`): `V`
 
+Execute the promises one after the other and reduce what they return.
+
 #### Type parameters
 
 | Name |
@@ -35,4 +37,4 @@
 
 #### Defined in
 
-[src/utils/promiseUtils.ts:1](https://github.com/medialib-project/medialib/blob/d187830/src/utils/promiseUtils.ts#L1)
+[src/utils/promiseUtils.ts:9](https://github.com/medialib-project/medialib/blob/23e7a19/src/utils/promiseUtils.ts#L9)

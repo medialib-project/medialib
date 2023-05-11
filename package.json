@@ -1,6 +1,6 @@
 {
   "name": "@medialib/medialib",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "This project give the core resources and conventions of the medialib project, compatible with the addonlib project",
   "main": "dist/index.js",
   "prettier": "prettier-config-leopoldhub",
@@ -10,7 +10,8 @@
     "lint": "prettier --write . && prettier --check . && eslint",
     "test": "npm run lint",
     "build": "npm run clean && npm run test && npm run docs && npm run compile",
-    "docs": "typedoc"
+    "docs": "typedoc",
+    "example": "node dist/examples/example.js"
   },
   "keywords": [
     "media",
@@ -36,6 +37,7 @@
   "devDependencies": {
     "@types/events": "^3.0.0",
     "@types/json-diff": "^0.9.1",
+    "@types/node": "^20.1.3",
     "eslint": "^8.39.0",
     "eslint-config-leopoldhub-base": "^1.0.1",
     "eslint-config-prettier": "^8.8.0",
@@ -47,7 +49,7 @@
     "typescript": "^5.0.4"
   },
   "dependencies": {
-    "@addonlib/addonlib": "^0.1.1",
+    "@addonlib/addonlib": "^0.1.2",
     "events": "^3.3.0",
     "json-diff": "^1.0.3"
   }

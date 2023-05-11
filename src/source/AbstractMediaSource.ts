@@ -8,6 +8,9 @@ import {
 import { optionDefinition, optionUtils } from '@addonlib/addonlib';
 
 //TODO: details?
+/**
+ * Source that fetch medias depending on settings and options
+ */
 export default abstract class AbstractMediaSource<
   T extends mediaSourceSettings = mediaSourceSettings,
   U extends mediaSourceFetchOption = mediaSourceFetchOption,

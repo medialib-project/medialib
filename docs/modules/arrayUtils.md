@@ -14,6 +14,8 @@
 
 ▸ **splitArrayInMaxSizeChunks**<`T`\>(`array`, `limit`): `T`[][]
 
+Every **limit**, split the array
+
 #### Type parameters
 
 | Name |
@@ -31,6 +33,8 @@
 
 `T`[][]
 
+the splitted arrays
+
 #### Defined in
 
-[src/utils/arrayUtils.ts:1](https://github.com/medialib-project/medialib/blob/d187830/src/utils/arrayUtils.ts#L1)
+[src/utils/arrayUtils.ts:7](https://github.com/medialib-project/medialib/blob/23e7a19/src/utils/arrayUtils.ts#L7)
